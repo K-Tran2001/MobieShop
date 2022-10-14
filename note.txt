@@ -1,0 +1,88 @@
+-gop cac file chuc nang thnah 1 file duy nhat EX: acc-func->(acc-getdataAll, acc-getdataById, acc-insert, acc-update
+acc-delete) action=? => ra thao tac xu li tuong ung (OK)
+
+-Add your heart (OK)
+
+
+-insert & delete heart (session)(db)... (OK)    
+
+-insert & delete cart (session)(db)... (OK)     
+
+
+-Add profile (OK)
+
+-session (OK)
+
+-Count heart- cart => onchange (OK)
+
+
+-f5 reder shopping-cart, heart-cart(OK)
+
+
+-Toast(msg) cho admin (OK)
+
+-xu ly ajax kem them thong bao sau khi thuc hien SUCCESS or ERROR deu phai thong bao truc quan (OK)
+
+-Phan trang cho table (OK)
+
+-AddeventListener=> view detail () (OK)
+
+-Them binh luan (cần thiết)<=> san pham lien quan (OK)
+
+-view profile - change infomation (OK)
+
+-Modal Nhap thong tin mua hàng(OK)
+
+-Cập nhật TT khách hàng => session(OK)
+
+-Modal design moi de se dang nhap lieu (EZ)(OK)
+
+
+-Thiet ke DB hoan chinh=> insert data chuan(OK)
+
+====================
+
+-TAO MODAL CON THIEU + FUNC PHỤ
+-product.php chưa dôi link img
+-hash md5 mat khau
+
+
+
+-thanh toan => modal xác nhận và nhập STK
+
+-Zoom img if hover
+
+-Edit lại ... nhúng PHP full trang mua hàng
+
+-Phan trang lọc và search
+
+-Quan li content
+    +Slider
+    +Blog
+
+
+
+
+
+-Report+chart+Xem nhanh
+<?php
+    $sql="select * from `transaction_details` where TRANS_D_ID='$transaction_d_id'";
+    $list=mysqli_query($conn,$sql);
+    $i=0;
+    while($row=mysqli_fetch_assoc($list)){
+        $i++;
+        echo "
+            <tr>
+                <td>".$i."</td>
+                <td>".$row['PRODUCTS']."</td>
+                <td>".$row['QTY']."</td>
+                <td>".$row['PRICE']."</td>
+                <td>".$row['QTY']*$row['PRICE']."</td>
+            </tr>
+        ";
+    }
+?>
+
+
+
+
