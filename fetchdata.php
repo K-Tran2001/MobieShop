@@ -343,7 +343,7 @@ include './config2.php';
         //Fetch into associative array
         while ( $row = mysqli_fetch_assoc($result))  {
           $sub_array = array();
-          $sub_array[] = "#".$row['TRANS_ID'];
+          $sub_array[] = "#".$row['TRANS_D_ID'];
           $sub_array[] = $row['FIRST_NAME']." ".$row['LAST_NAME'];
           $sub_array[] = $row['NUMOFITEMS'];
           

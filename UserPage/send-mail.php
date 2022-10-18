@@ -6,14 +6,19 @@
     require './Mailer/SMTP.php';
     require './Mailer/Exception.php';
 
-    include '../config.php';
+    session_start();
+    include '../config2.php';
+    if(!empty($_SESSION['user'][0]['CUST_ID']))
+        $cust_id=$_SESSION['user'][0]['CUST_ID'];
+    else
+        $cust_id='null';
    
     $email_content='';
     $total=$_POST['total'];
     $name=$_POST['name'];
     $address=$_POST['address'];
     $phone=$_POST['phone'];
-    $sql='select * from `giohang`';
+    $sql="SELECT * FROM `shopping` WHERE `shopping`.`cust_id`=$cust_id";
     $i=0;
 
     $header="
@@ -72,8 +77,8 @@
     //Set this to true if SMTP host requires authentication to send email
     $mail->SMTPAuth = true;                          
     //Provide username and password     
-    $mail->Username = "tvkhoa_20th@student.agu.edu.vn";                 
-    $mail->Password = "ylawcnlfaqvvxsub";                           
+    $mail->Username = "khoatranvan.1998@gmail.com";                 
+    $mail->Password = "bosyovmyxatwuupv";                           
     //If SMTP requires TLS encryption then set it
     $mail->SMTPSecure = "tls";                           
     //Set TCP port to connect to

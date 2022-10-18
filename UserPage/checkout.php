@@ -523,10 +523,11 @@
                                 },
 
                             });
-                            setTimeout(()=>{window.location.href='checkout.php'},5000);
                             setTimeout(() => {
                                 deleteItemAll(); 
-                            }, 4000);
+                            }, 2000);
+                            setTimeout(()=>{window.location.href='history.php'},3000);
+                            
                         }
                         // let order=document.querySelector('#Order');
                         // order.onclick= Order();

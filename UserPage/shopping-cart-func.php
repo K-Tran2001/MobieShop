@@ -1,7 +1,11 @@
 <?php
     session_start();
     include '../config2.php';
-    $cust_id=$_SESSION['user'][0]['CUST_ID'];
+    if(!empty($_SESSION['user'][0]['CUST_ID']))
+        $cust_id=$_SESSION['user'][0]['CUST_ID'];
+    else
+        $cust_id='null';
+
     //print_r($cust_id);
     if(isset($_GET['type'])&&isset($_GET['action'])){
         if($_GET['action']=='insert'||$_GET['action']=='update'){
@@ -18,7 +22,7 @@
         $res='';
         $data= array();
         
-        if($_GET['type']=='cart'){
+        if($_GET['type']=='cart' && $cust_id!='null'){
             if($_GET['action']=='getdataAll'){
                 $sql="SELECT * FROM `shopping` WHERE `shopping`.`cust_id`=$cust_id";
                 $list=mysqli_query($conn,$sql);
@@ -108,7 +112,8 @@
                 $numOfItems=0;
                 $gandTotal=0;
                 while($row=mysqli_fetch_assoc($ds)){//INSERT INTO `transaction_details` (`ID`, `TRANS_D_ID`, `PRODUCTS`, `QTY`, `PRICE`) VALUES (NULL, 'kkkkkkk', 'SP demo', '5', '15');
-                    $numOfItems++;
+                    $numOfItems=$row['number'];
+                    
                     $gandTotal+=$row['price'];
                     $sub_array = array();
                     $sub_array[] = $row['id'];
@@ -121,6 +126,7 @@
                     $title=$row['title'];
                     $price=$row['price'];
                     $number=$row['number'];
+                    
                     $sql="INSERT INTO `transaction_details` (`ID`, `TRANS_D_ID`, `PRODUCTS`, `QTY`, `PRICE`) VALUES (NULL, '$trans_d_id', '$title', '$number', '$price')";
                     echo $sql;            
                     mysqli_query($conn,$sql);
@@ -140,12 +146,12 @@
                 VALUES (NULL,$cust_id, '$numOfItems', '$gandTotal', '2022-10', '$trans_d_id')";
                 mysqli_query($conn,$sql);
             }else{
-                $sql="DELETE FROM `shopping` ";
+                $sql="DELETE FROM `shopping` WHERE `shopping`.`cust_id`=$cust_id";
                 $res=mysqli_query($conn,$sql);
                 echo $sql;
             }
 
-        }else{//heart
+        }else if($_GET['type']=='heart' && $cust_id!='null'){//heart
             if($_GET['action']=='getdataAll'){
                 $sql="SELECT * FROM `favorite` WHERE `favorite`.`cust_id`=$cust_id";
                 $list=mysqli_query($conn,$sql);

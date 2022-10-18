@@ -43,7 +43,7 @@
 
         <li class="dropdown">
             <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                <i class="material-icons">category</i><span>Product</span></a>
+                <i class="material-icons">smartphone</i><span>Product</span></a>
             <ul class="collapse list-unstyled menu" id="homeSubmenu1">
                 <li>
                     <a href="product.php">Link 1</a>

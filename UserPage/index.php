@@ -79,7 +79,7 @@
                         <h3 class="newsletter-title">Subscribe Newsletter.</h3>
 
                         <p class="newsletter-desc">
-                            Subscribe the <b>Anon</b> to get latest products and discount update.
+                            Subscribe the <b>K-shop</b> to get latest products and discount update.
                         </p>
 
                     </div>
@@ -544,7 +544,7 @@
                                     <button class="sidebar-accordion-menu" data-accordion-btn>
 
                                         <div class="menu-title-flex">
-                                            <img src="./assets/images/icons/dress.svg" alt="clothes" width="20" height="20"
+                                            <img src="./assets/images/icons/quotes.svg" alt="clothes" width="20" height="20"
                                             class="menu-title-img">
 
                                             <p class="menu-title"><?php echo $row['CNAME']?></p>
@@ -557,13 +557,22 @@
 
                                     </button>
                                     <ul class="sidebar-submenu-category-list" data-accordion>
-                                        
+                                        <?php
+                                            $sql="select * from product where CATEGORY_ID='$category_id'";
+                                            $data=mysqli_query($conn,$sql);
+                                            if(mysqli_num_rows($data)){
+                                                while($r=mysqli_fetch_assoc($data)){
+                                        ?>
                                         <li class="sidebar-submenu-category">
-                                            <a href="#" class="sidebar-submenu-title">
-                                                <p class="product-name">Iphone</p>
-                                                <data value="300" class="stock" title="Available Stock">55</data>
+                                            <a href="view.php?id=<?php echo $r['PRODUCT_ID']?>" class="sidebar-submenu-title">
+                                                <p class="product-name"><?php echo $r['NAME']?></p>
+                                                <data value="" class="stock" title="Available Stock"><?php echo $r['QTY_STOCK']?></data>
                                             </a>
                                         </li>
+                                        <?php
+                                            }
+                                        }
+                                        ?>
                                         
                                     </ul>
 

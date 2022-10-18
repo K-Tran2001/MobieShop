@@ -407,7 +407,7 @@ if(!empty($_SESSION['user']))
                 <ul class="setting">
                     
                     <li><a style="text-decoration: none;color:#171427" href="./profile-edit.php">Cập nhật hồ sơ cá nhân<i class='bx bx-chevron-right'></i></a></li>
-                    <li>Dia chi<i class='bx bx-chevron-right'></i></li>
+                    <li><a style="text-decoration: none;color:#171427" href="./history.php">Lịch sử mua hàng<i class='bx bx-chevron-right'></i></a></li>
                     <li><button onclick="()=>{window.location.href='index.php'}">Cai dat rieng<i class='bx bx-chevron-right'></i></button></li>
                     <li>Trung tam ho tro<i class='bx bx-chevron-right'></i></li>
                     <li>Yeu cau xoa tai khoan<i class='bx bx-chevron-right'></i></li>
