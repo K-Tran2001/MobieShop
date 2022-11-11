@@ -4,7 +4,7 @@
     </div>
     <ul class="list-unstyled components">
         <li class="active">
-            <a href="index.php" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+            <a href="../../AD/DASHBOARD" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
         </li>
 
         <div class="small-screen navbar-display">
@@ -46,7 +46,7 @@
                 <i class="material-icons">smartphone</i><span>Product</span></a>
             <ul class="collapse list-unstyled menu" id="homeSubmenu1">
                 <li>
-                    <a href="product.php">Link 1</a>
+                    <a href="../../AD/DEMO-PRO">Link 1</a>
                 </li>
                 <li>
                     <a href="#">Link 2</a>
@@ -61,7 +61,7 @@
                 <i class="material-icons">inventory</i><span>inventory</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu4">
                 <li>
-                    <a href="inventory.php">Link 1</a>
+                    <a href="../../AD/INVENTORY">Link 1</a>
                 </li>
                 <li>
                     <a href="#">Link 2</a>
@@ -75,7 +75,7 @@
                 <i class="material-icons">transcribe</i><span>customer</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu5">
                 <li>
-                    <a href="customer.php">Link 1</a>
+                    <a href="../../AD/DEMO-CUS">Link 1</a>
                 </li>
                 <li>
                     <a href="#">Link 2</a>
@@ -91,7 +91,7 @@
                 <i class="material-icons">screen_rotation_alt</i><span>transaction</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu6">
                 <li>
-                    <a href="transaction.php">Link 1</a>
+                    <a href="../../AD/DEMO-TRAN">Link 1</a>
                 </li>
                 <li>
                     <a href="#">Link 2</a>
@@ -104,7 +104,7 @@
                 <i class="material-icons">account_circle</i><span>Accounts</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu8">
                 <li>
-                    <a href="account.php">Link 1</a>
+                    <a href="../../AD/DEMO-ACC">Link 1</a>
                 </li>
                 <li>
                     <a href="#">Link 2</a>
@@ -117,22 +117,22 @@
                 <i class="material-icons">grid_on</i><span>More</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu7">
                 <li>
-                <a href="category.php"><i class="material-icons">category</i>Category</a>
+                <a href="../../AD/DEMO-CAT"><i class="material-icons">category</i>Category</a>
                 </li>
                 <li>
-                <a href="supplier.php"><i class="material-icons">account_balance</i>Supplier</a>
+                <a href="../../AD/DEMO-SUP"><i class="material-icons">account_balance</i>Supplier</a>
                 </li>
                 <li>
-                    <a href="location.php"><i class="material-icons">pin_drop</i>Location</a>
+                    <a href="../../AD/DEMO-LOC"><i class="material-icons">pin_drop</i>Location</a>
                 </li>
                 <li>
-                    <a href="type.php"><i class="material-icons">type_specimen</i>Type</a>
+                    <a href="../../AD/DEMO-TYPE"><i class="material-icons">type_specimen</i>Type</a>
                 </li>
                 <li>
-                    <a href="banner.php"><i class="material-icons">photo</i>Banner</a>
+                    <a href="../../AD/DEMO-BAN"><i class="material-icons">photo</i>Banner</a>
                 </li>
                 <li>
-                    <a href="blog.php"><i class="material-icons">feed</i>Blog</a>
+                    <a href="../../AD/DEMO-BLOG"><i class="material-icons">feed</i>Blog</a>
                 </li>
                 
             </ul>

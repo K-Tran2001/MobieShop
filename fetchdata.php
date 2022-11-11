@@ -196,7 +196,7 @@ include './config2.php';
           $sub_array = array();
           $sub_array[] = $row['USERNAME'];
           $sub_array[] = $row['PASSWORD'];
-          $sub_array[] = '<img src="UserPage/img/'.$row['IMG'].'" style="width: 50px;height: 50px;">';
+          $sub_array[] = '<img src="../../UserPage/img/'.$row['IMG'].'" style="width: 50px;height: 50px;">';
           if($row['STATE']==0)
             $sub_array[] ='<input type="checkbox" class"changestate"  onchange="changeState(`'.$row['ID'].'`,1)">';
           else  
@@ -216,7 +216,7 @@ include './config2.php';
           $sub_array = array();
           $sub_array[] = $row['PRODUCT_CODE'];
           $sub_array[] = $row['NAME'];
-          $sub_array[] = '<img src="UserPage/img/'.$row['IMG'].'" style="width: 50px;height: 50px;">';
+          $sub_array[] = '<img src="../../UserPage/img/'.$row['IMG'].'" style="width: 50px;height: 50px;">';
           $sub_array[] = $row['DESCRIPTION'];
           $sub_array[] = $row['PRICE'];
           if($row['STATE']==0)
@@ -364,7 +364,7 @@ include './config2.php';
         while ( $row = mysqli_fetch_assoc($result))  {
           $sub_array = array();
           
-          $sub_array[] = '<img src="UserPage/img/'.$row['IMG'].'" style="width: 250px;height: 250px;">';
+          $sub_array[] = '<img src="../../UserPage/img/'.$row['IMG'].'" style="width: 250px;height: 250px;">';
           if($row['STATE']==0)
             $sub_array[] ='<input type="checkbox" class"changestate"  onchange="changeState(`'.$row['BANNER_ID'].'`,1)">';
           else  
@@ -386,7 +386,7 @@ include './config2.php';
         //Fetch into associative array
         while ( $row = mysqli_fetch_assoc($result))  {
           $sub_array = array();
-          $sub_array[] = '<img src="UserPage/img/'.$row['IMG'].'" style="width: 250px;height: 250px;">';
+          $sub_array[] = '<img src="../../UserPage/img/'.$row['IMG'].'" style="width: 250px;height: 250px;">';
           $sub_array[] = $row['AUTHOR'];
           $sub_array[] = $row['DATE'];
           if($row['STATE']==0)

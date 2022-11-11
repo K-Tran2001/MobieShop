@@ -791,11 +791,11 @@
                         <img src="img/green.png" alt="" class="shoe" color="green">
                         <img src="img/orange.png" alt="" class="shoe" color="orange">
                         <img src="img/black.png" alt="" class="shoe" color="black"> -->
-                        <img  src="img/<?php echo $dong['IMG']?>" alt="" class="shoe img-pro show" color="blue">
-                        <img  src="img/<?php echo $dong['IMG']?>" alt="" class="shoe img-pro" color="red">
-                        <img  src="img/<?php echo $dong['IMG']?>" alt="" class="shoe img-pro" color="green">
-                        <img  src="img/<?php echo $dong['IMG']?>" alt="" class="shoe img-pro" color="orange">
-                        <img  src="img/<?php echo $dong['IMG']?>" alt="" class="shoe img-pro" color="black">
+                        <img  src="img/<?php echo $dong['IMG']?>" alt="" class="product-img-view shoe img-pro show" color="blue">
+                        <img  src="img/<?php echo $dong['IMG']?>" alt="" class="product-img-view shoe img-pro" color="red">
+                        <img  src="img/<?php echo $dong['IMG']?>" alt="" class="product-img-view shoe img-pro" color="green">
+                        <img  src="img/<?php echo $dong['IMG']?>" alt="" class="product-img-view shoe img-pro" color="orange">
+                        <img  src="img/<?php echo $dong['IMG']?>" alt="" class="product-img-view shoe img-pro" color="black">
 
                     </div>
                     <div class="info">
@@ -831,7 +831,11 @@
                             </div>
                         </div>
                         <div class="buy-price">
-                            <a href="#" class="buy"><i class="fas fa-shopping-cart"></i>Add to card</a>
+                            <!-- <a href="#" class="buy"><i class="fas fa-shopping-cart"></i>Add to card</a> -->
+                            <!--id, title, price, productImg-->
+                            <button class ="buy" onclick="addCart(<?php echo $dong['PRODUCT_ID']?>,
+                                                                    '<?php echo $dong['NAME']?>',
+                                                                    '<?php echo $dong['PRICE']?>')"><i class="fas fa-shopping-cart"></i>Add to card</button>
                             <div class="price">
                                 <i class="fas fa-dollar-sign"></i>
                                 <h1><?php echo $dong['PRICE']?> $</h1>
@@ -907,6 +911,91 @@
                 changeHeight();
 
                 window.addEventListener('resize', changeHeight);
+                function addCart(id, title, price) {
+                    ///// Lấy full link img
+                    var productImg = document.getElementsByClassName('product-img-view')[0].src;
+                    console.log(productImg);
+                    $.ajax({
+                        url: "shopping-cart-func.php?type=cart&action=getdataById",
+                        type: "post",
+                        data: {
+                            id: id,
+                        },
+                        success: function (data, status) {
+                            console.log(data);
+                            if (data == 1) { //ton tai
+                                showSuccessToast('Error', title + ' already exists in Your ShoppingCart', 'error');
+
+                            } else if (data == 0) {
+                                addProductToCart2(id, title, price, productImg); //=> them 1 cai id de xoa ok hon
+
+                                addProductToCart_db2(id, title, price, productImg);
+                                updateTotal();
+                                showSuccessToast('Success', title + ' has just been added to Your ShppingCart', 'success');
+                                displayCart();
+                            }
+                        },
+                    });
+                    // addProductToCart2(id, title, price, productImg);
+                    // addProductToCart_db2(id, title, price, productImg);
+                }
+                function addProductToCart2(id, title, price, productImg) {
+                    console.log(id + title + price + productImg);
+                    count_cart_number++;
+                    count_cart.innerText = count_cart_number;
+
+                    var cartShopBox = document.createElement('div')
+                    cartShopBox.classList.add('cart-box')
+                    var cartItems = document.getElementsByClassName('cart-content')[0];
+                    var cartItemsNames = cartItems.getElementsByClassName('cart-product-title');
+                    for (var i = 0; i < cartItemsNames.length; i++) {
+                        if (cartItemsNames[i].innerText == 'title') {
+                            alert('you have already add this item to cart')
+                            return;
+                        }
+                    }
+
+                    var cartBoxContent = `
+                            <img src="${productImg}" alt="" class="cart-img">
+                            <div class="detail-box">
+                                <div class="cart-product-id" style="display: none;">${id}</div>
+                                <div class="cart-product-title">${title}</div>
+                                <div class="cart-price">${price}</div>
+                                <input type="number" class="cart-quantity" value="1">
+                            </div>
+                            <!---remove-->
+                            <i class='bx bxs-trash-alt cart-remove'></i>
+
+                    `
+                    cartShopBox.innerHTML = cartBoxContent;
+                    cartItems.append(cartShopBox);
+                    cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click', removeCartItem);
+                    cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged);
+
+                }
+                function addProductToCart_db2(id, title, price, productImg) {
+                    console.log(id); console.log("-"); console.log(title); console.log("-");
+                    console.log(price); console.log("-"); console.log(productImg); console.log("-")
+                    $.ajax({
+                        url: "shopping-cart-func.php?type=cart&action=insert",
+                        type: "post",
+                        data: {
+                            id: id,
+                            title: title,
+                            price: price, //co $ no fail
+                            productImg: productImg,
+                            number:1
+
+                        },
+                        success: function (data, status) {
+
+                            console.log(data);
+
+                        }
+
+                    })
+
+                }
             </script> 
 
             </div>

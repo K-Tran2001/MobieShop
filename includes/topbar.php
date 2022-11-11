@@ -7,8 +7,8 @@
         </button>
 
             <a class="navbar-brand" href="#"> Dashboard </a>
-            <a href="UserPage/index.php" target="blank" class="btn btn-dark">Website</a>
-            <a href="./login.php" target="blank" class="btn btn-warning m-2">Login</a>
+            <a href="../../UserPage/index.php" target="blank" class="btn btn-dark">Website</a>
+            <a href="../../login.php" target="blank" class="btn btn-warning m-2">Login</a>
             <button class="d-inline-block d-lg-none ml-auto more-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="material-icons">more_vert</span>
         </button>

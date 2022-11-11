@@ -11,7 +11,7 @@
         * {
             box-sizing: border-box;
         }
-        
+
         body {
             align-items: center;
             display: flex;
@@ -22,7 +22,7 @@
             min-height: 100%;
             margin: 10%;
         }
-        
+
         .container {
             position: relative;
             width: 768px;
@@ -33,7 +33,7 @@
             overflow: hidden;
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
         }
-        
+
         .sign-up,
         .sign-in {
             position: absolute;
@@ -42,18 +42,18 @@
             height: 100%;
             transition: all 0.6s ease-in-out;
         }
-        
+
         .sign-up {
             width: 50%;
             opacity: 0;
             z-index: 1
         }
-        
+
         .sign-in {
             width: 50%;
             z-index: 2;
         }
-        
+
         .form {
             background: #fff;
             display: flex;
@@ -64,12 +64,12 @@
             height: 100%;
             text-align: center;
         }
-        
+
         h1 {
             font-weight: bold;
             margin: 0;
         }
-        
+
         p {
             font-size: 14px;
             font-weight: 100;
@@ -77,7 +77,7 @@
             letter-spacing: 0.5px;
             margin: 15px 0 20px;
         }
-        
+
         input {
             background: #eee;
             padding: 12px 15px;
@@ -102,7 +102,7 @@
             text-decoration: none;
             margin: 15px 0;
         }
-        
+
         button {
             color: #fff;
             background: #ff4b2b;
@@ -118,28 +118,28 @@
             transition: transform 80ms ease-in;
             cursor: pointer;
         }
-        
+
         button:active {
             transform: scale(0.90);
         }
-        
+
         #signIn,
         #signUp {
             background-color: transparent;
             border: 2px solid #fff;
         }
-        
+
         .container.right-panel-active .sign-in {
             transform: translateX(100%);
         }
-        
+
         .container.right-panel-active .sign-up {
             transform: translateX(100%);
             opacity: 1;
             z-index: 5;
             animation: show 0.6s;
         }
-        
+
         @keyframes show {
             0%,
             49.99% {
@@ -152,7 +152,7 @@
                 z-index: 5;
             }
         }
-        
+
         .overlay-container {
             position: absolute;
             top: 0;
@@ -163,11 +163,11 @@
             transition: transform 0.6s ease-in-out;
             z-index: 100;
         }
-        
+
         .container.right-panel-active .overlay-container {
             transform: translateX(-100%);
         }
-        
+
         .overlay {
             position: relative;
             color: #fff;
@@ -179,11 +179,11 @@
             transform: translateX(0);
             transition: transform 0.6s ease-in-out;
         }
-        
+
         .container.right-panel-active .overlay {
             transform: translateX(50%);
         }
-        
+
         .overlay-left,
         .overlay-right {
             position: absolute;
@@ -199,28 +199,28 @@
             transform: translateX(0);
             transition: transform 0.6s ease-in-out;
         }
-        
+
         .overlay-left {
             transform: translateX(-20%);
         }
-        
+
         .overlay-right {
             right: 0;
             transform: translateX(0);
         }
-        
+
         .container.right-panel-active .overlay-left {
             transform: translateX(0);
         }
-        
+
         .container.right-panel-active .overlay-right {
             transform: translateX(20%);
         }
-        
+
         .social-container {
             margin: 20px 0;
         }
-        
+
         .social-container a {
             height: 40px;
             width: 40px;
@@ -245,12 +245,12 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <p>or use your email for registration</p>
-                
+
                 <input type="text" name="email" id="email" placeholder="Email" required="">
                 <input type="text" name="username" id="username" placeholder="Username" required="">
                 <input type="password" name="pswd" id="password" placeholder="Password" required="">
-                
-                
+
+
                 <select name="location_id" id="location_id" placeholder="Location">
 
                     <?php
@@ -319,7 +319,7 @@
         //         addaccount();
         // });
         function addaccount(){
-            
+
                 try{
                     var username=$('#username').val();
                     var password=$('#password').val();
@@ -327,8 +327,8 @@
                     var location_id=$('#location_id').val();
                     console.log(location_id);
                     var img='hacker.jpg';
-                    
-                       
+
+
                     $.ajax({
                         url:"regis.php",
                         type:"post",
@@ -338,25 +338,25 @@
                             email:email,
                             location_id:location_id,
                             img:img,
-                            
+
                         },
                         success:function(data,status){
-                            
+
                             console.log(data);
                             console.log('thnah cong');
-                            
-                            
+
+
                             //displayData();
                             showSuccessMsg('Thanh Cong','Dang ki thanh cong','success')
                         }
-                        
+
 
                     })
 
                 }catch{
-                    
+
                 }
-                
+
             }
             function logIn(){
                 var username=$('#username_login').val();
@@ -368,8 +368,8 @@
                         data:{
                             username:username,
                             password:password,
-                            
-                            
+
+
                         },
                         success:function(data,status){
                             console.log(data);
@@ -382,22 +382,22 @@
                             }else{
                                 showSuccessMsg('That bai','Dang nhap khong thanh cong','error');
                             }
-                            
 
-                            
-                            
-                            
+
+
+
+
                             //displayData();
-                            
+
                         }
-                        
+
 
                     })
 
             }
 
     </script>
-    
+
 </body>
 
 </html>

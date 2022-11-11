@@ -1,4 +1,4 @@
-<?php include './loadFK.php'?>
+<?php include '../../loadFK.php'?>
 <!--Modal add--> 
 <div class="modal fade" id="New" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">

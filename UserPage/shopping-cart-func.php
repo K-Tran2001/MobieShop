@@ -78,8 +78,6 @@
                 echo $shopping_id;
             }else if($_GET['action']=='insert'){
                 $sql="INSERT INTO `shopping` (`id`, `title`, `price`, `productImg`, `number`,`cust_id`) VALUES ('$id', '$title', '$price', '$productImg', 1,$cust_id)";
-            
-
                 $res=mysqli_query($conn,$sql);
                 echo $sql;
                 

@@ -1,4 +1,4 @@
-
+<?php include '../../loadFK.php' ?>
 <!--Modal add--> 
 <div class="modal fade" id="New" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
@@ -18,7 +18,7 @@
                     <label for="cname_insert" >Category Name</label>
                     <select id="category_id_insert" name="category_id_insert" class="form-control">
                         <?php 
-                        include './loadFK.php';
+                        
                         loadCategory();
                         ?>
                     </select>

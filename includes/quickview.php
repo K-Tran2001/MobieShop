@@ -1,3 +1,27 @@
+<?php
+    include '../../config2.php';
+    $orders=0;
+    $revenue=0;
+    $follow=0;
+    /////
+    $sql="select COUNT(*) as COUNT from transaction ";
+    $item=mysqli_query($conn,$sql);
+    $response=array();
+    $row=mysqli_fetch_assoc($item);
+    $orders=$row['COUNT'];
+    /////
+    $sql="select sum(GRANDTOTAL) as SUM from transaction ";
+    $item=mysqli_query($conn,$sql);
+    $response=array();
+    $row=mysqli_fetch_assoc($item);
+    $revenue=$row['SUM'];
+    /////
+    $sql="select COUNT(*) as COUNT from users ";
+    $item=mysqli_query($conn,$sql);
+    $response=array();
+    $row=mysqli_fetch_assoc($item);
+    $follow=$row['COUNT'];
+?>
 <div class="row">
     <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="card card-stats">
@@ -8,7 +32,7 @@
             </div>
             <div class="card-content">
                 <p class="category"><strong>Visits</strong></p>
-                <h3 class="card-title">70,340</h3>
+                <h3 class="card-title">340</h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -16,6 +40,7 @@
                     <a href="#pablo">See detailed report</a>
                 </div>
             </div>
+            
         </div>
     </div>
     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -28,7 +53,7 @@
             </div>
             <div class="card-content">
                 <p class="category"><strong>Orders</strong></p>
-                <h3 class="card-title">102</h3>
+                <h3 class="card-title"><?php echo $orders ?></h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -49,7 +74,7 @@
             </div>
             <div class="card-content">
                 <p class="category"><strong>Revenue</strong></p>
-                <h3 class="card-title">$23,10</h3>
+                <h3 class="card-title">$<?php echo $revenue ?></h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -70,7 +95,7 @@
             </div>
             <div class="card-content">
                 <p class="category"><strong>Followers</strong></p>
-                <h3 class="card-title">+245</h3>
+                <h3 class="card-title">+<?php echo $follow ?></h3>
             </div>
             <div class="card-footer">
                 <div class="stats">

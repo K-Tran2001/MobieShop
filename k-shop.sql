@@ -1,11 +1,9 @@
-﻿
---id19659798_shop	id19659798_khoatranvan	localhost
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2022 at 08:47 AM
+-- Generation Time: Oct 03, 2022 at 02:11 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.14
 
@@ -20,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `shop`
+-- Database: `kshop`
 --
 
 -- --------------------------------------------------------
@@ -79,6 +77,27 @@ INSERT INTO `customer` (`CUST_ID`, `FIRST_NAME`, `LAST_NAME`, `PHONE_NUMBER`, `L
 (15, 'Kimbert', 'Duyag', '09956288467', 111),
 (16, 'Dieqcohr', 'Rufino', '09891344576', 111),
 (20, 'Tran', 'Van Khoa', '0367855407', 164);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `favorite`
+--
+
+CREATE TABLE `favorite` (
+  `id` varchar(10) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `price` int(11) NOT NULL,
+  `productImg` varchar(50) NOT NULL,
+  `number` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `favorite`
+--
+
+INSERT INTO `favorite` (`id`, `title`, `price`, `productImg`, `number`) VALUES
+('12', 'Fantech EG1', 895, 'http://localhost:8080/DA-PHP/UserPage/img/h1.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -194,6 +213,29 @@ INSERT INTO `product` (`PRODUCT_ID`, `PRODUCT_CODE`, `NAME`, `IMG`, `DESCRIPTION
 (29, '24254', 'khoa vip', '2e9f425f9655550b0c44.jpg', 'ádgfsdgsg', 1, 1, 999, 18, 18, '2022-09-30', 0, 0, 0),
 (30, '24254', 'gsdgdgd', 'tainghe.jpg', '?', 4, 3, 999, 6, 18, '2022-10-13', 1, 0, 0),
 (31, '0000', 'demo 2', 'Vivo-Y51-Price-in-South-Africa-2048x2048.png', 'day la san pham demo\njdbgjbdkjgbd', 5, 1, 19999, 0, 11, '2022-10-13', 1, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shopping`
+--
+
+CREATE TABLE `shopping` (
+  `id` varchar(10) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `price` int(11) NOT NULL,
+  `productImg` varchar(100) NOT NULL,
+  `number` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `shopping`
+--
+
+INSERT INTO `shopping` (`id`, `title`, `price`, `productImg`, `number`) VALUES
+('1', 'Lenovo Ideapad 20059', 999, 'http://localhost:8080/DA-PHP/UserPage/img/sz5pg-34152463-origpic-eeda8f.png', 1),
+('12', 'Fantech EG1', 895, 'http://localhost:8080/DA-PHP/UserPage/img/h1.jpg', 1),
+('30', 'Gsdgdgd', 999, 'http://localhost:8080/DA-PHP/UserPage/img/tainghe.jpg', 1);
 
 -- --------------------------------------------------------
 

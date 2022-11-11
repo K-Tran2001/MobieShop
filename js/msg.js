@@ -15,6 +15,7 @@ function showErrorMsg(title, message, type) {
         type: type,
         duration: 5000
     });
+
 }
 // msg function
 function msg({
@@ -28,12 +29,12 @@ function msg({
         const msg = document.createElement("div");
 
         // Auto remove msg
-        const autoRemoveId = setTimeout(function() {
+        const autoRemoveId = setTimeout(function () {
             main.removeChild(msg);
         }, duration + 1000);
 
         // Remove msg when clicked
-        msg.onclick = function(e) {
+        msg.onclick = function (e) {
             if (e.target.closest(".msg__close")) {
                 main.removeChild(msg);
                 clearTimeout(autoRemoveId);

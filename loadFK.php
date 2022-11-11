@@ -1,24 +1,4 @@
 <?php
-    $server="localhost";
-    $user="root";
-    $pass="";
-    $db="k-shop";
-
-    $conn=mysqli_connect($server,$user,$pass,$db);
-    if(!$conn){
-        die("Loi ".mysqli_connect_error());
-        exit();
-    }
-
-    // $sql="select * from `location`";
-    //     $ds=mysqli_query($conn,$sql);
-    //     $res='';
-    //     while($dong=mysqli_fetch_assoc($ds)){
-    //         $res.='<option value='.$dong['LOCATION_ID'].'>'.$dong['CITY'].'</option>';
-    //     }
-    //     echo $res;
-    
-        //functio loadFK(page);if else
 
     function loadProduct(){
         include 'config2.php';

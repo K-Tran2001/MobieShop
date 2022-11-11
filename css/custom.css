@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nova+Slim&display=swap');
+
 body,
 html {
     line-height: 1.8;
@@ -117,7 +118,7 @@ a:focus {
 
 #sidebar {
     position: fixed;
-    height: 100vh!important;
+    height: 100vh !important;
     top: 0;
     bottom: 0;
     left: 0;
@@ -252,7 +253,12 @@ a:focus {
 }
 
 .navbar {
-    background-color: #2196F3;
+    background: #355C7D;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #FFFFFF;
 }
 
@@ -336,7 +342,7 @@ a:focus {
 .navbar-nav li a {
     position: relative;
     display: block;
-    padding: 10px 15px!important;
+    padding: 10px 15px !important;
 }
 
 
@@ -359,13 +365,13 @@ a:focus {
 }
 
 .card {
-    border-radius: 0px!important;
+    border-radius: 0px !important;
 }
 
 .card {
     display: inline-block;
     position: relative;
-    border: none!important;
+    border: none !important;
     width: 100%;
     margin: 15px 0;
     box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
@@ -382,7 +388,7 @@ a:focus {
 .card .card-header {
     padding: 15px 20px 0;
     z-index: 3;
-    background-color: #fff!important;
+    background-color: #fff !important;
     border-bottom: none;
 }
 
@@ -423,7 +429,7 @@ a:focus {
 }
 
 .text-info {
-    color: #03A9F4!important;
+    color: #03A9F4 !important;
 }
 
 .card-stats .card-content {
@@ -617,26 +623,30 @@ footer .copyright {
 @media only screen and (min-width:992px) {
     #sidebar.active {
         width: 80px;
-        height: 100%!important;
-        position: absolute!important;
-        overflow: visible!important;
-        top: 0!important;
+        height: 100% !important;
+        position: absolute !important;
+        overflow: visible !important;
+        top: 0 !important;
         z-index: 666;
-        float: left!important;
-        bottom: 0!important;
+        float: left !important;
+        bottom: 0 !important;
     }
+
     #sidebar.active .sidebar-header h3 span {
         display: none;
         transition: all 0.5s ease;
     }
+
     #sidebar.active ul li a span {
         display: none;
         transition: all 0.5s ease;
     }
+
     #sidebar.active .dropdown-toggle::after {
         display: none;
         transition: all 0.5s ease;
     }
+
     #content {
         width: calc(100% - 260px);
         position: relative;
@@ -644,9 +654,11 @@ footer .copyright {
         transition: all 0.3s;
         background-color: #EEEEEE;
     }
+
     #content.active {
         width: calc(100% - 80px);
     }
+
     #sidebar.active .menu {
         position: absolute;
         left: 81px;
@@ -687,8 +699,9 @@ footer .copyright {
         width: 260px;
         transform: translatex(-100%);
         transition: all 150ms linear;
-        box-shadow: none!important;
+        box-shadow: none !important;
     }
+
     .body-overlay {
         position: fixed;
         top: 0;

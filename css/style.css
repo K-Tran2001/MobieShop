@@ -344,3 +344,14 @@ a:hover {
     padding: 5px;
     font-size: 1rem;
 }
+.footer{
+    text-align: left;
+    padding: 5px;
+    font-size: 1rem;
+}
+.header{
+    text-align: left;
+    padding: 5px 10px;
+    font-size: 1rem;
+    display:flex
+}
