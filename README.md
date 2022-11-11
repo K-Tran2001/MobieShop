@@ -1,3 +1,4 @@
+MobieShop - DA-PHP Git
 # Đồ Án Quản Lý Dự Án Phần Mềm (Mr.Hòa)
 ## Kế hoạch thực hiện (2 tháng)
 > Do môn này là môn cần nhiều dữ kiện và lịch sử làm việc của nhóm nên cần mọi người nghiêm túc tập trung và kiên trì để hoàn thành kết quả tốt
