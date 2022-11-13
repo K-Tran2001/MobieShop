@@ -449,35 +449,7 @@
 
             <div class="slider-container has-scrollbar">
                 <!--2-->
-                <?php include './Components/slider-item.php' ?>;
-    <?php
-        $sql="SELECT * FROM `banner` ";//$sql="SELECT * FROM `product` ORDER by BUY_NUMBER DESC LIMIT 3";
-        $list=mysqli_query($conn,$sql);
-        while($row=mysqli_fetch_assoc($list)){
-    ?>
-    
-    <div class="slider-item">
-
-        <img src="./img/<?php echo $row['IMG']?>" alt="new fashion summer sale" class="banner-img">
-
-        <div class="banner-content">
-
-            <p class="banner-subtitle">Sale Offer</p>
-
-            <h2 class="banner-title">...</h2>
-
-            <p class="banner-text">
-                starting at &dollar; <b>29</b>.99
-            </p>
-
-            <a href="#" class="banner-btn">Shop now</a>
-
-        </div>
-
-    </div>
-    <?php
-            }
-    ?>      
+               
                 <!--2-->
             </div>
 
@@ -535,7 +507,56 @@
 
                         <ul class="sidebar-menu-category-list">
                             <!--3-->
+                            <?php
+        $sql="select CNAME,CATEGORY_ID from `category`";
+        $list=mysqli_query($conn,$sql);
+        while($row=mysqli_fetch_assoc($list)){
+            $category_id=$row['CATEGORY_ID'];
+        
+    ?>
+        <li class="sidebar-menu-category">
 
+            <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                <div class="menu-title-flex">
+                    <img src="./assets/images/icons/quotes.svg" alt="clothes" width="20" height="20"
+                    class="menu-title-img">
+
+                    <p class="menu-title"><?php echo $row['CNAME']?></p>
+                </div>
+
+                <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                </div>
+
+            </button>
+            <ul class="sidebar-submenu-category-list" data-accordion>
+                <?php
+                    $sql="select * from product where CATEGORY_ID='$category_id'";
+                    $data=mysqli_query($conn,$sql);
+                    if(mysqli_num_rows($data)){
+                        while($r=mysqli_fetch_assoc($data)){
+                ?>
+                <li class="sidebar-submenu-category">
+                    <a href="view.php?id=<?php echo $r['PRODUCT_ID']?>" class="sidebar-submenu-title">
+                        <p class="product-name"><?php echo $r['NAME']?></p>
+                        <data value="" class="stock" title="Available Stock"><?php echo $r['QTY_STOCK']?></data>
+                    </a>
+                </li>
+                <?php
+                    }
+                }
+                ?>
+                
+            </ul>
+
+        </li>
+
+    <!--Nhung code-->
+    <?php
+    }
+    ?>
                             <!--3-->
                         </ul>
 
@@ -550,7 +571,44 @@
                             <div class="showcase-container">
                                 <!--Nhung code SELECT * FROM `product` ORDER by BUY_NUMBER DESC LIMIT 5-->
                                 <!--4-->
+                                <?php
+                                    $sql="SELECT * FROM `product` ORDER by BUY_NUMBER DESC LIMIT 5";
+                                    $list=mysqli_query($conn,$sql);
+                                    while($row=mysqli_fetch_assoc($list)){
+                                    
+                                ?>
+                                <div class="showcase">
 
+                                    <a href="#" class="showcase-img-box">
+                                        <img src="./img/<?php echo $row['IMG']?>" alt="baby fabric shoes" width="75" height="75" class="showcase-img">
+                                    </a>
+
+                                    <div class="showcase-content">
+
+                                        <a href="#">
+                                            <h4 class="showcase-title"><?php echo $row['NAME']?></h4>
+                                        </a>
+
+                                        <div class="showcase-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <del><?php echo $row['PRICE']+10?></del>
+                                            <p class="price"><?php echo $row['PRICE']?></p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <?php
+                                    }
+                                ?>
                                 <!--4-->
                                 
                                 <!--Nhung code-->
@@ -586,7 +644,102 @@
 
                         <div class="showcase-wrapper has-scrollbar">
                             <!--5-->
+                            <?php
+                                $sql="SELECT * FROM `product` ORDER by BUY_NUMBER DESC LIMIT 3";
+                                $list=mysqli_query($conn,$sql);
+                                while($row=mysqli_fetch_assoc($list)){
+                            ?>
+                            <div class="showcase-container">
 
+                                <div class="showcase">
+
+                                    <div class="showcase-banner">
+                                        <img src="./img/<?php echo $row['IMG']?>" alt="shampoo, conditioner & facewash packs" class="showcase-img">
+                                    </div>
+
+                                    <div class="showcase-content">
+
+                                        <div class="showcase-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star-outline"></ion-icon>
+                                            <ion-icon name="star-outline"></ion-icon>
+                                        </div>
+
+                                        <a href="#">
+                                            <h3 class="showcase-title"><?php echo $row['NAME']?></h3>
+                                        </a>
+
+                                        <p class="showcase-desc">
+                                        <?php echo $row['DESCRIPTION']?>
+                                        </p>
+
+                                        <div class="price-box">
+                                            <p class="price"><?php echo $row['PRICE']?></p>
+
+                                            <del><?php echo $row['PRICE']+10?></del>
+                                        </div>
+
+                                        <button class="add-cart-btn">add to cart</button>
+
+                                        <div class="showcase-status">
+                                            <div class="wrapper">
+                                                <p>
+                                                    already sold: <b>20</b>
+                                                </p>
+
+                                                <p>
+                                                    available: <b>40</b>
+                                                </p>
+                                            </div>
+
+                                            <div class="showcase-status-bar"></div>
+                                        </div>
+
+                                        <div class="countdown-box">
+
+                                            <p class="countdown-desc">
+                                                Hurry Up! Offer ends in:
+                                            </p>
+
+                                            <div class="countdown">
+
+                                                <div class="countdown-content">
+
+                                                    <p class="display-number">360</p>
+
+                                                    <p class="display-text">Days</p>
+
+                                                </div>
+
+                                                <div class="countdown-content">
+                                                    <p class="display-number">24</p>
+                                                    <p class="display-text">Hours</p>
+                                                </div>
+
+                                                <div class="countdown-content">
+                                                    <p class="display-number">59</p>
+                                                    <p class="display-text">Min</p>
+                                                </div>
+
+                                                <div class="countdown-content">
+                                                    <p class="display-number">00</p>
+                                                    <p class="display-text">Sec</p>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <?php
+                                }
+                            ?>
 
                             <!--5-->
                             
@@ -605,6 +758,88 @@
 
                         <div class="product-grid">
                             <!--6-->
+                            <?php
+                                
+                                $sql='select * from `product` p inner join `category` c on p.CATEGORY_ID = c.CATEGORY_ID';
+                                $ds=mysqli_query($conn,$sql);
+                                if(mysqli_num_rows($ds)){
+                                    while($dong = mysqli_fetch_assoc($ds)){
+                                        if($dong['STATE']==1){
+
+
+                            ?>
+                                <div class="showcase">
+
+                                    <div class="showcase-banner">
+                                        
+
+                                        <img src="img/<?php echo $dong['IMG']?>" alt="Mens Winter Leathers Jackets" width="200" class="product-img default">
+                                        <img src="img/<?php echo $dong['IMG']?>" alt="Mens Winter Leathers Jackets" width="200" class="product-img hover">
+
+                                        <p class="showcase-badge">15%</p>
+
+                                        <div class="showcase-actions">
+
+                                            <button class="btn-action">
+                                                <ion-icon name="heart-outline" class="add-cart-heart"></ion-icon>
+                                            </button>
+
+                                            <button class="btn-action">
+                                                <ion-icon name="eye-outline" class="view-detail"></ion-icon>
+                                            </button>
+
+                                            <button class="btn-action">
+                                                <ion-icon name="repeat-outline"></ion-icon>
+                                            </button>
+
+                                            <button class="btn-action">
+                                                <ion-icon name="bag-add-outline" class="add-cart"></ion-icon>
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="showcase-content">
+                                        
+                                        <a href="#">
+                                        <h5 class="product-id" style="display: none;"  ><?php echo $dong['PRODUCT_ID']?></h5>
+                                        </a>
+
+                                        <a href="#" class="showcase-category"><?php echo $dong['CNAME']?></a>
+
+                                        <a href="#">
+                                            <h3 class="showcase-title product-title"><?php echo $dong['NAME']?></h3>
+                                        </a>
+
+                                        <div class="showcase-rating">
+                                            <?php
+                                                $star=3;
+                                            
+                                                for( $i=0;$i < $star-1;$i++){
+                                                    echo ' <ion-icon name="star"></ion-icon>';
+                                                }
+                                            
+                                            
+                                            ?>
+                                            <ion-icon name="star"></ion-icon>
+                                            
+                                        </div>
+
+                                        <div class="price-box">
+                                            <p class="price">$<?php echo $dong['PRICE']?></p>
+                                            <del>$<?php echo $dong['PRICE']+50?></del>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            <?php
+                                        }
+                                    }
+                                }
+                            ?>
 
                             <!--6-->
 
