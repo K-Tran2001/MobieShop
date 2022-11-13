@@ -510,7 +510,7 @@
                         
                         pay.onclick = ()=>{
                             
-                            sendMail();//delay....
+                            //sendMail();//delay....
                             showSuccessMsg('Thanh Cong','Thanh toan thanh cong '+<?php echo $total?>+' VND' ,'success')
                             showSuccessMsg('Thanh Cong','Dat hang thanh cong<br>Thong tin don hang duoc gui toi mail <tvkhoa_20th@student.agu.edu.vn>','info')
                             $.ajax({
@@ -526,7 +526,7 @@
                             setTimeout(() => {
                                 deleteItemAll(); 
                             }, 2000);
-                            setTimeout(()=>{window.location.href='history.php'},3000);
+                            setTimeout(()=>{window.location.href='purchase-history.php'},3000);
                             
                         }
                         // let order=document.querySelector('#Order');
@@ -552,6 +552,19 @@
                                 },
 
                             })
+                        }
+                        function deleteItemAll(){
+                            $.ajax({
+                                    url: "shopping-cart-func.php?type=cart&action=deleteAll",
+                                    type: "post",
+                                    data: {
+                                    },
+                                    success: function(data, status) {
+                                        
+                                    }
+
+                                })
+
                         }
                         function getDateTime(){
                             var d = new Date();
@@ -665,19 +678,7 @@
 
                                 }
                         }
-                        function deleteItemAll(){
-                            $.ajax({
-                                    url: "shopping-cart-func.php?type=cart&action=deleteAll",
-                                    type: "post",
-                                    data: {
-                                    },
-                                    success: function(data, status) {
-                                        
-                                    }
-
-                                })
-
-                        }
+                        
                     </script>
                 
         </div>

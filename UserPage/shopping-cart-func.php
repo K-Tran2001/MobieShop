@@ -130,7 +130,7 @@
                     mysqli_query($conn,$sql);
                 }
                 ///=>Xoa All shopping
-                $sql="DELETE FROM `shopping` where `shopping`=$cust_id ";
+                $sql="DELETE FROM `shopping` where `shopping`.cust_id=$cust_id ";
                 $res=mysqli_query($conn,$sql);
                 // echo $sql;
                 $output=array(
