@@ -403,35 +403,35 @@
 
             <div class="slider-container has-scrollbar">
                 <!--2-->
-                <?php include './Components/slider-item.php' ?>;
-    <?php
-        $sql="SELECT * FROM `banner` ";//$sql="SELECT * FROM `product` ORDER by BUY_NUMBER DESC LIMIT 3";
-        $list=mysqli_query($conn,$sql);
-        while($row=mysqli_fetch_assoc($list)){
-    ?>
-    
-    <div class="slider-item">
+                
+                <?php
+                    $sql="SELECT * FROM `banner` ";//$sql="SELECT * FROM `product` ORDER by BUY_NUMBER DESC LIMIT 3";
+                    $list=mysqli_query($conn,$sql);
+                    while($row=mysqli_fetch_assoc($list)){
+                ?>
+                
+                <div class="slider-item">
 
-        <img src="./img/<?php echo $row['IMG']?>" alt="new fashion summer sale" class="banner-img">
+                    <img src="./img/<?php echo $row['IMG']?>" alt="new fashion summer sale" class="banner-img">
 
-        <div class="banner-content">
+                    <div class="banner-content">
 
-            <p class="banner-subtitle">Sale Offer</p>
+                        <p class="banner-subtitle">Sale Offer</p>
 
-            <h2 class="banner-title">...</h2>
+                        <h2 class="banner-title">...</h2>
 
-            <p class="banner-text">
-                starting at &dollar; <b>29</b>.99
-            </p>
+                        <p class="banner-text">
+                            starting at &dollar; <b>29</b>.99
+                        </p>
 
-            <a href="#" class="banner-btn">Shop now</a>
+                        <a href="#" class="banner-btn">Shop now</a>
 
-        </div>
+                    </div>
 
-    </div>
-    <?php
-            }
-    ?>                      
+                </div>
+                <?php
+                        }
+                ?>                      
                 <!--2-->
             </div>
 
@@ -448,8 +448,7 @@
 
                 <div class="category-item-container has-scrollbar">
 
-                    <?php include './Components/category-item.php'?>
-                    <?php include './Components/category-item.php'?>
+                    
                     
                 
                 </div>

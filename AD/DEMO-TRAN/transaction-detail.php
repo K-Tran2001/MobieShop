@@ -93,7 +93,7 @@
                                 $row=mysqli_fetch_assoc($list);
                                 //print_r($row);
                                 $subtotal=$row['GRANDTOTAL'];
-                                $addVAT=$row['GRANDTOTAL']*0.1;
+                                $addVAT=+($row['GRANDTOTAL'])*0.1;
                                 $total=$subtotal+$addVAT;
                                 //echo json_encode($row)
                             ?>

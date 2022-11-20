@@ -72,15 +72,7 @@ $(document).ready(function () {
 
 
     });
-    $(document).on('click', '.state', function () {
-        //var user_id = $(this).attr("id");
-        changeState(0, 0, dataTable);
 
-
-        // deleteproduct(user_id, dataTable);
-
-
-    });
 
 });
 
@@ -318,7 +310,7 @@ function updateDetails(dataTable) {
     }
 
 }
-function changeState(id, state, dataTable) {
+function changeState(id, state) {
     $.post("pro-func.php?action=updateState", {
         product_id: id,
         state: state
@@ -327,7 +319,7 @@ function changeState(id, state, dataTable) {
     }, function (data, status) {
 
         showSuccessMsg('Thanh Cong', 'Sua DL thanh cong', 'info')
-        dataTable.ajax.reload();
+        setInterval(() => { location.href = "../../AD/DEMO-PRO"; }, 500);
 
 
     });

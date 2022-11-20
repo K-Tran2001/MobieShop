@@ -42,11 +42,11 @@
     }
     function loadType(){
         include 'config2.php';
-        $sql="select * from `type_user`";
+        $sql="select * from `type`";
         $ds=mysqli_query($conn,$sql);
         $res='';
         while($dong=mysqli_fetch_assoc($ds)){
-            $res.='<option value='.$dong['type_id'].'>'.$dong['type'].'</option>';
+            $res.='<option value='.$dong['TYPE_ID'].'>'.$dong['TYPE'].'</option>';
         }
         echo $res;
     }
