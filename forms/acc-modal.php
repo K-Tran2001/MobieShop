@@ -21,6 +21,11 @@
                         <label for="password_insert" >Password</label>
                         <input type="password" class="form-control" id="password_insert" name="password_insert" placeholder="Password">
                     </div>
+                    <div class="col-auto">
+                        
+                        <img src="" alt="hinh" srcset="" id="avatar_show_i" width='200' >
+                        
+                    </div>
 
                     <div class="col-auto">
                         <label for="avatar_insert" >Avatar</label>
@@ -80,10 +85,26 @@
                         <label for="password_update" >PASSWORD</label>
                         <input type="password_update" class="form-control" id="password_update" name="password_update" placeholder="PASSWORD">
                     </div>
+                    <div class="col-auto">
+                        
+                        <img src="" alt="hinh" srcset="" id="avatar_show_u" width='200' >
+                        
+                    </div>
 
                     <div class="col-auto">
                         <label for="avatar_update" >IMG</label>
-                        <input type="file"  class="form-control" id="avatar_update" name="avatar_update" placeholder="IMG">
+                        <input type="file"  class="form-control" id="avatar_update" name="avatar_update" placeholder="IMG" >
+                        <script>
+                            // function showImg(event) {
+
+                            // //console.log(event);
+                            // const f = event.target.files[0];
+                            // const link = URL.createObjectURL(f)
+                            // console.log(link)
+                            // document.getElementById('avatar_show').src = link;
+
+                            // }
+                        </script>
                     </div>
                     <div class="col-auto">
                         <label for="type_id_update" >TYPE ID</label>

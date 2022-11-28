@@ -1,6 +1,6 @@
 <nav id="sidebar">
     <div class="sidebar-header">
-        <h3><img src="UserPage/img/logo-K-5.jpg" class="img-fluid" /><span>K Shop</span></h3>
+        <h3><img src="../../UserPage/img/logo-K-5.jpg" class="img-fluid" /><span>K Shop</span></h3>
     </div>
     <ul class="list-unstyled components">
         <li class="active">
@@ -46,7 +46,7 @@
                 <i class="material-icons">smartphone</i><span>Product</span></a>
             <ul class="collapse list-unstyled menu" id="homeSubmenu1">
                 <li>
-                    <a href="../../AD/DEMO-PRO">Link 1</a>
+                    <a href="../../AD/PRODUCT">Link 1</a>
                 </li>
                 <li>
                     <a href="#">Link 2</a>
@@ -56,26 +56,14 @@
         </li>
 
         
-        <li class="dropdown">
-            <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                <i class="material-icons">inventory</i><span>inventory</span></a>
-            <ul class="collapse list-unstyled menu" id="pageSubmenu4">
-                <li>
-                    <a href="../../AD/INVENTORY">Link 1</a>
-                </li>
-                <li>
-                    <a href="#">Link 2</a>
-                </li>
-                
-            </ul>
-        </li>
+        
 
         <li class="dropdown">
             <a href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="material-icons">transcribe</i><span>customer</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu5">
                 <li>
-                    <a href="../../AD/DEMO-CUS">Link 1</a>
+                    <a href="../../AD/CUSTOMER">Link 1</a>
                 </li>
                 <li>
                     <a href="#">Link 2</a>
@@ -91,7 +79,7 @@
                 <i class="material-icons">screen_rotation_alt</i><span>transaction</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu6">
                 <li>
-                    <a href="../../AD/DEMO-TRAN">Link 1</a>
+                    <a href="../../AD/TRANSACTION">Link 1</a>
                 </li>
                 <li>
                     <a href="#">Link 2</a>
@@ -104,7 +92,7 @@
                 <i class="material-icons">account_circle</i><span>Accounts</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu8">
                 <li>
-                    <a href="../../AD/DEMO-ACC">Link 1</a>
+                    <a href="../../AD/ACCOUNT">Link 1</a>
                 </li>
                 <li>
                     <a href="#">Link 2</a>
@@ -117,22 +105,22 @@
                 <i class="material-icons">grid_on</i><span>More</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu7">
                 <li>
-                <a href="../../AD/DEMO-CAT"><i class="material-icons">category</i>Category</a>
+                <a href="../../AD/CATEGORY"><i class="material-icons">category</i>Category</a>
                 </li>
                 <li>
-                <a href="../../AD/DEMO-SUP"><i class="material-icons">account_balance</i>Supplier</a>
+                <a href="../../AD/SUPPLIER"><i class="material-icons">account_balance</i>Supplier</a>
                 </li>
                 <li>
-                    <a href="../../AD/DEMO-LOC"><i class="material-icons">pin_drop</i>Location</a>
+                    <a href="../../AD/LOCATION"><i class="material-icons">pin_drop</i>Location</a>
                 </li>
                 <li>
-                    <a href="../../AD/DEMO-TYPE"><i class="material-icons">type_specimen</i>Type</a>
+                    <a href="../../AD/TYPE"><i class="material-icons">type_specimen</i>Type</a>
                 </li>
                 <li>
-                    <a href="../../AD/DEMO-BAN"><i class="material-icons">photo</i>Banner</a>
+                    <a href="../../AD/BANNER"><i class="material-icons">photo</i>Banner</a>
                 </li>
                 <li>
-                    <a href="../../AD/DEMO-BLOG"><i class="material-icons">feed</i>Blog</a>
+                    <a href="../../AD/BLOG"><i class="material-icons">feed</i>Blog</a>
                 </li>
                 
             </ul>

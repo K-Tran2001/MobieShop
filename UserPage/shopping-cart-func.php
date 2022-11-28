@@ -125,6 +125,11 @@
                     $price=$row['price'];
                     $number=$row['number'];
                     
+                    
+                    //increa buynumber
+                    $sql="update `product` set BUY_NUMBER=BUY_NUMBER+1 where `PRODUCT_ID`=".$row['id']."";
+                    mysqli_query($conn,$sql);
+                    
                     $sql="INSERT INTO `transaction_details` (`ID`, `TRANS_D_ID`, `PRODUCTS`, `QTY`, `PRICE`) VALUES (NULL, '$trans_d_id', '$title', '$number', '$price')";
                     echo $sql;            
                     mysqli_query($conn,$sql);

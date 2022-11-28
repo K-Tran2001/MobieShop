@@ -27,7 +27,7 @@
             position: relative;
             width: 768px;
             max-width: 100%;
-            min-height: 480px;
+            min-height: 600px;
             background: #fff;
             border-radius: 10px;
             overflow: hidden;
@@ -246,7 +246,10 @@
                 </div>
                 <p>or use your email for registration</p>
 
-                <input type="text" name="email" id="email" placeholder="Email" required="">
+                
+                <!-- <input type="text" name="email" id="email" placeholder="Email" required=""> -->
+                <input type="text" name="f_name" id="f_name" placeholder="First name" required="">
+                <input type="text" name="l_name" id="l_name" placeholder="Last name" required="">
                 <input type="text" name="username" id="username" placeholder="Username" required="">
                 <input type="password" name="pswd" id="password" placeholder="Password" required="">
 
@@ -321,11 +324,14 @@
         function addaccount(){
 
                 try{
+                    var f_name=$('#f_name').val();
+                    var l_name=$('#l_name').val();
                     var username=$('#username').val();
                     var password=$('#password').val();
-                    var email=$('#email').val();
+                    //var email=$('#email').val();
                     var location_id=$('#location_id').val();
                     console.log(location_id);
+                    
                     var img='hacker.jpg';
 
 
@@ -333,9 +339,10 @@
                         url:"regis.php",
                         type:"post",
                         data:{
+                            f_name:f_name,
+                            l_name:l_name,
                             username:username,
                             password:password,
-                            email:email,
                             location_id:location_id,
                             img:img,
 

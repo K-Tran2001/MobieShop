@@ -3,8 +3,8 @@
 <html lang="en">
 
 <head>
-       <!-- Required meta tags -->
-       <meta charset="utf-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>cms dashboard
@@ -64,129 +64,52 @@
 
 
             <div class="main-content">
+
                 
 
-                <!---Thay doi-
-                select *
-                from (`transaction` trans inner join `customer` cust on trans.CUST_ID=cust.CUST_ID) 
-                INNER JOIN location lo on lo.LOCATION_ID=cust.LOCATION_ID-->
 
                 <div class="row ">
                     <div class="col-lg-12 col-md-12">            
                         <div id="msg"></div>
                         <script src="../../js/msg.js"></script>
-                        <!--================================-->
+
                         <div class="card" style="min-height: 485px;">        
                             <div class="card-header card-header-text">
-                                <h4 class="card-title">Transaction Detail</h4>
+                                <h4 class="card-title">Accounts</h4>
                                 <p class="category">Duong dan toi / back ve doashboard</p>
-                                
                             </div>
-                            <?php
-                                include '../../config2.php';
-                                $transaction_d_id=$_GET['transaction_d_id'];
-                                $transaction_id=$_GET['transaction_id'];
-                                $sql="select *
-                                from (`transaction` trans inner join `customer` cust on trans.CUST_ID=cust.CUST_ID) 
-                                INNER JOIN location lo on lo.LOCATION_ID=cust.LOCATION_ID where TRANS_ID='$transaction_id'";
-                                $list=mysqli_query($conn,$sql);
-                                $row=mysqli_fetch_assoc($list);
-                                //print_r($row);
-                                $subtotal=$row['GRANDTOTAL'];
-                                $addVAT=+($row['GRANDTOTAL'])*0.1;
-                                $total=$subtotal+$addVAT;
-                                //echo json_encode($row)
-                            ?>
- 
+                            <!-- Button trigger modal -->
+
+                            <?php include '../../forms/blog-modal.php'?>
+                            
                             <div class="card-content table-responsive">
+                                <button type="button" class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
                                 
-                                <div class="row">
-                                    <div class="col-sm-9"></div>
-                                    <div class="col-sm-3">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <a href="./" class="btn btn-primary btn-sm mb-2">Back</a>
-                                                <a href="../../PDF/index.php?transaction_d_id=<?php echo $transaction_d_id?>&transaction_id=<?php echo $transaction_id?>" class="btn btn-success btn-sm mb-2">Export Bill</a>
-                                            </div>
-                                        </div>
-                                        Date:<?php echo $row['DATE']?>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        Customer name:<?php echo $row['FIRST_NAME'].' '.$row['LAST_NAME']?>  <br>
-                                        Adress:<?php echo $row['PROVINCE'].' '.$row['CITY']?> <br>
-                                        Phone:<?php echo $row['PHONE_NUMBER']?>
-                                    </div>
-                                    <div class="col-sm-4"></div>
-                                    <div class="col-sm-4">
-                                        Transaction ID:#<?php echo $transaction_id?>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Product Name</th>
-                                            <th scope="col">Quantity</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Subtotal</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            $sql="select * from `transaction_details` where TRANS_D_ID='$transaction_d_id'";
-                                            $list=mysqli_query($conn,$sql);
-                                            $i=0;
-                                            while($row=mysqli_fetch_assoc($list)){
-                                                $i++;
-                                                echo "
-                                                    <tr>
-                                                        <td>".$i."</td>
-                                                        <td>".$row['PRODUCTS']."</td>
-                                                        <td>".$row['QTY']."</td>
-                                                        <td>".$row['PRICE']."</td>
-                                                        <td>".$row['QTY']*$row['PRICE']."</td>
-                                                    </tr>
-                                                ";
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-7"></div>
-                                    <div class="col-sm-4 py-1">
-                                        payment methods: <br>&emsp;&emsp;&emsp;Payment on delivery
-                                        <hr>
-                                        <table width="100%">
-                                            <tbody><tr>
-                                            <td class="font-weight-bold">Subtotal</td>
-                                            <td class="text-right">$ <?php echo $subtotal?></td>
-                                            </tr>
+                                
+
+                                <table class="table table-hover" id="myTable">
+                                    <thead class="text-primary">
+                                        <tr>
                                             
+                                            <th scope="col">Blog img</th>
                                             
-                                            <tr>
-                                            <td class="font-weight-bold">Add VAT</td>
-                                            <td class="text-right">$<?php echo $addVAT ?></td>
-                                            </tr>
-                                            <tr>
-                                            <td class="font-weight-bold">Total</td>
-                                            <td class="font-weight-bold text-right text-primary">$ <?php echo $total?></td>
-                                            </tr>
-                                        </tbody></table>
-                                    </div>
-                                    <div class="col-sm-1"></div>
-                                </div>
-                               
+                                            <th scope="col">Author</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">State</th>
+
+                                            <th scope="col">Update</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                
+                                
+
                                 
                             </div>
                         </div>
                     </div>
 
-                    <!---Thay doi-->
                     
                 </div>
 
@@ -223,7 +146,7 @@
         $(document).ready(function() {
             
             var dataTable=$('#myTable').DataTable({
-                "ajax": "../../fetchdata.php?page=transaction",
+                "ajax": "../../fetchdata.php?page=blog",
                 "columns": [{
                     "data": "0"
                 }, {
@@ -232,6 +155,10 @@
                     "data": "2"
                 }, {
                     "data": "3"
+                },  {
+                    "data": "4"
+                },  {
+                    "data": "5"
                 }]
             });
             
@@ -268,7 +195,7 @@
             $(document).on('click','#Add',function(){
                 
                 
-                adduser(dataTable);
+                addblog(dataTable);
                 // 
 
             });
@@ -299,7 +226,7 @@
         
         function uploadfile_for_insert(){
                             //To save file with this name
-                            var file_data = $('#avatar_insert').prop('files')[0];    //Fetch the file
+                            var file_data = $('#img_insert').prop('files')[0];    //Fetch the file
                             filename=file_data['name'];
                             console.log(filename);
                             var form_data = new FormData();
@@ -318,13 +245,13 @@
 
                                     success:function(dat2){
                                         if(dat2==1) alert("Successful");
-                                        else alert("Unable to Upload");
+                                        else alert("Unable to ../../");
                                     }
                                 });
                             }
                             function uploadfile_for_update(){
                             //To save file with this name
-                            var file_data = $('#avatar_update').prop('files')[0];    //Fetch the file
+                            var file_data = $('#img_update').prop('files')[0];    //Fetch the file
                             filename=file_data['name'];
                             console.log(filename);
                             var form_data = new FormData();
@@ -350,63 +277,61 @@
                             function getDetails(id){
                                 
                                 console.log(id);
-                                $.post("acc-func.php?action=getdataById",{updateid:id},function(data,status){
-                                    var userid =JSON.parse(data);
-                                    console.log(userid);
+                                $.post("blog-func.php?action=getdataById",{updateid:id},function(data,status){
+                                    var blogid =JSON.parse(data);
+                                    console.log(blogid);
 
-                                    $('#id_update').val(userid.ID);
-                                    $('#username_update').val(userid.USERNAME);
-                                    $('#password_update').val(userid.PASSWORD);
-                                    $('#img_update').val(userid.IMG);
-                                    $('#type_id_update').val(userid.TYPE_ID);
-                                    $('#customer_id_update').val(userid.CUSTOMER_ID);
-                                    $('#state_update').val(userid.STATE);
-                                    //$('#avatar_update').val(userid.avatar);
+                                    $('#blog_id_update').val(blogid.BLOG_ID);
+                                    
+                                    $('#category_id_update').val(blogid.CATEGORY_ID);
+                                    
+                                    $('#title_update').val(blogid.TITLE);
+                                    $('#author_update').val(blogid.AUTHOR);
+                                    $('#state_update').val(blogid.STATE);
+                                    $('#date_update').val(blogid.DATE);
+                                    //$('#avatar_update').val(blogid.avatar);
                                     
                                 });
                                
                                 $('#Edit').modal('show');
                                 //mai code
                             }
-                            function viewDetail(transaction_id){
-                                
-                            }
                             
                             function updateDetails(dataTable){
                                 try{
-                                    var file_data = $('#avatar_update').prop('files')[0];    //Fetch the file
+                                    var file_data = $('#img_update').prop('files')[0];    //Fetch the file
                                     filename=file_data['name'];
 
-                                    var id=$('#id_update').val();
-                                    var username=$('#username_update').val();
-                                    var password=$('#password_update').val();
-                                    var avatar=filename;
-                                    var type_id=$('#type_id_update').val();
-                                    var customer_id=$('#customer_id_update').val();
+                                    var blog_id=$('#blog_id_update').val();
+                                    var img=filename;
+                                    var category_id=$('#category_id_update').val();
+                                    var title=$('#title_update').val();
+                                    var author=$('#author_update').val();
                                     var state=$('#state_update').val();
+                                    var date=$('#date_update').val();
 
                                     console.log(1);
-                                    $.post("acc-func.php?action=update",{
-                                        id:id,
-                                        username:username,
-                                        password:password,
-                                        avatar:avatar,
-                                        type_id:type_id,
-                                        customer_id:customer_id,
+                                    $.post("blog-func.php?action=update",{
+                                        blog_id:blog_id,
+                                        img:img,
+                                        category_id:category_id,
+                                        title:title,
+                                        author:author,
                                         state:state,
+                                        date:date,
 
                                     },function(data,status){
-                                        
+                                        console.log(data)
                                         dataTable.ajax.reload();
                                         
                                         uploadfile_for_update();
-                                        $('#id_update').val('');
-                                        $('#username_update').val('');
-                                        $('#password_update').val('');
-                                        $('#avatar_update').val('');
-                                        $('#type_id_update').val('');
-                                        $('#customer_id_update').val('');
+                                        $('#blog_id_update').val('');
+                                        $('#ing_update').val('');
+                                        $('#category_id_update').val('');
+                                        $('#title_update').val('');
+                                        $('#author_update').val('');
                                         $('#state_update').val('');
+                                        $('#date_update').val('');
                                         
                                         
                                         $('#Edit').modal('hide');
@@ -419,46 +344,45 @@
 
                                 }catch{
 
-                                    
 
-                                    var id=$('#id_update').val();
-                                    var username=$('#username_update').val();
-                                    var password=$('#password_update').val();
-                                    var avatar='';
-                                    var type_id=$('#type_id_update').val();
-                                    var customer_id=$('#customer_id_update').val();
+                                    var blog_id=$('#blog_id_update').val();
+                                    var img='';
+                                    var category_id=$('#category_id_update').val();
+                                    var title=$('#title_update').val();
+                                    var author=$('#author_update').val();
                                     var state=$('#state_update').val();
+                                    var date=$('#date_update').val();
 
                                     console.log(1);
-                                    $.post("acc-func.php?action=update",{
-                                        id:id,
-                                        username:username,
-                                        password:password,
-                                        avatar:avatar,
-                                        type_id:type_id,
-                                        customer_id:customer_id,
+                                    $.post("blog-func.php?action=update",{
+                                        blog_id:blog_id,
+                                        img:img,
+                                        category_id:category_id,
+                                        title:title,
+                                        author:author,
                                         state:state,
+                                        date:date,
 
-                                    },
-                                    function(data,status){
-                                        
+                                    },function(data,status){
+                                        console.log(data)
                                         dataTable.ajax.reload();
                                         
-                                        //uploadfile_for_update();
-
-                                        $('#id_update').val('');
-                                        $('#username_update').val('');
-                                        $('#password_update').val('');
-                                        $('#avatar_update').val('');
-                                        $('#type_id_update').val('');
-                                        $('#customer_id_update').val('');
+                                        
+                                        $('#blog_id_update').val('');
+                                        $('#ing_update').val('');
+                                        $('#category_id_update').val('');
+                                        $('#title_update').val('');
+                                        $('#author_update').val('');
                                         $('#state_update').val('');
+                                        $('#date_update').val('');
                                         
                                         
                                         $('#Edit').modal('hide');
                                         
                                         //displayData();
                                         showSuccessMsg('Thanh Cong','Sua DL thanh cong','info')
+                                        
+
                                     });
 
                                 }
@@ -466,9 +390,9 @@
 
                             }
                             
-                            function changeState(id,state){
-                                $.post("acc-func.php?action=updateState",{
-                                        id:id,
+                            function changeState(blog_id,state){
+                                $.post("blog-func.php?action=updateState",{
+                                        blog_id:blog_id,
                                         state:state
                         
                                         
@@ -488,7 +412,7 @@
                                 if(confirm('Ban co thuc su muon xoa '+id)){
                                     $.ajax({
                                     
-                                        url:"acc-func.php?action=delete",
+                                        url:"blog-func.php?action=delete",
                                         type:"post",
                                         data:{
                                             deleteid:id
@@ -511,7 +435,7 @@
                             function displayData(){
                                 var displayData="true";
                                 $.ajax({
-                                    url:"acc-func.php?action=getdataAll",
+                                    url:"blog-func.php?action=getdataAll",
                                     type:"post",
                                     data:{
                                         displaySend:displayData
@@ -529,39 +453,39 @@
                             }
 
 
-                            function adduser(dataTable){
+                            function addblog(dataTable){
                                 try{
-                                    var file_data = $('#avatar_insert').prop('files')[0];    //Fetch the file
+                                    var file_data = $('#img_insert').prop('files')[0];    //Fetch the file
                                     filename=file_data['name'];
 
-                                    var username=$('#username_insert').val();
-                                    var password=$('#password_insert').val();
-                                    var avatar=filename;
-                                    var type_id=$('#type_id_insert').val();
-                                    var customer_id=$('#customer_id_insert').val();
+                                    var category_id=$('#category_id_insert').val();
+                                    var title=$('#title_insert').val();
+                                    var img=filename;
+                                    var author=$('#author_insert').val();
+                                    var date=$('#date_insert').val();
                                     
 
-                                    console.log(username,password,avatar);
+                                    
                                     
                                     $.ajax({
-                                        url:"acc-func.php?action=insert",
+                                        url:"blog-func.php?action=insert",
                                         type:"post",
                                         data:{
-                                            username:username,
-                                            password:password,
-                                            avatar:avatar,
-                                            type_id:type_id,
-                                            customer_id:customer_id,
+                                            category_id:category_id,
+                                            title:title,
+                                            img:img,
+                                            author:author,
+                                            date:date,
                                         },
                                         success:function(data,status){
                                             dataTable.ajax.reload();
                                             uploadfile_for_insert();
 
-                                            $('#username_insert').val('');
-                                            $('#password_insert').val('');
-                                            $('#avatar_insert').val('');
-                                            $('#type_id_insert').val('');
-                                            $('#customer_id_insert').val('');
+                                            $('#category_id_insert').val('');
+                                            $('#title_insert').val('');
+                                            $('#img_insert').val('');
+                                            $('#author_insert').val('');
+                                            $('#date_insert').val('');
                                             $('#New').modal('hide');
                                             //displayData();
                                             showSuccessMsg('Thanh Cong','Them DL thanh cong','success')

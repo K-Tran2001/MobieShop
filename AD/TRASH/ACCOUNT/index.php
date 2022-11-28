@@ -3,8 +3,8 @@
 <html lang="en">
 
 <head>
-       <!-- Required meta tags -->
-       <meta charset="utf-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>cms dashboard
@@ -64,129 +64,48 @@
 
 
             <div class="main-content">
+
                 
 
-                <!---Thay doi-
-                select *
-                from (`transaction` trans inner join `customer` cust on trans.CUST_ID=cust.CUST_ID) 
-                INNER JOIN location lo on lo.LOCATION_ID=cust.LOCATION_ID-->
 
                 <div class="row ">
                     <div class="col-lg-12 col-md-12">            
                         <div id="msg"></div>
                         <script src="../../js/msg.js"></script>
-                        <!--================================-->
+                    <!--=========================================================================================-->
                         <div class="card" style="min-height: 485px;">        
                             <div class="card-header card-header-text">
-                                <h4 class="card-title">Transaction Detail</h4>
+                                <h4 class="card-title">Accounts</h4>
                                 <p class="category">Duong dan toi / back ve doashboard</p>
-                                
                             </div>
-                            <?php
-                                include '../../config2.php';
-                                $transaction_d_id=$_GET['transaction_d_id'];
-                                $transaction_id=$_GET['transaction_id'];
-                                $sql="select *
-                                from (`transaction` trans inner join `customer` cust on trans.CUST_ID=cust.CUST_ID) 
-                                INNER JOIN location lo on lo.LOCATION_ID=cust.LOCATION_ID where TRANS_ID='$transaction_id'";
-                                $list=mysqli_query($conn,$sql);
-                                $row=mysqli_fetch_assoc($list);
-                                //print_r($row);
-                                $subtotal=$row['GRANDTOTAL'];
-                                $addVAT=+($row['GRANDTOTAL'])*0.1;
-                                $total=$subtotal+$addVAT;
-                                //echo json_encode($row)
-                            ?>
- 
+                            <!-- Button trigger modal -->
+
+                            <?php include '../../forms/acc-modal.php'?>
+                            
                             <div class="card-content table-responsive">
+                                <button type="button" class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
                                 
-                                <div class="row">
-                                    <div class="col-sm-9"></div>
-                                    <div class="col-sm-3">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <a href="./" class="btn btn-primary btn-sm mb-2">Back</a>
-                                                <a href="../../PDF/index.php?transaction_d_id=<?php echo $transaction_d_id?>&transaction_id=<?php echo $transaction_id?>" class="btn btn-success btn-sm mb-2">Export Bill</a>
-                                            </div>
-                                        </div>
-                                        Date:<?php echo $row['DATE']?>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        Customer name:<?php echo $row['FIRST_NAME'].' '.$row['LAST_NAME']?>  <br>
-                                        Adress:<?php echo $row['PROVINCE'].' '.$row['CITY']?> <br>
-                                        Phone:<?php echo $row['PHONE_NUMBER']?>
-                                    </div>
-                                    <div class="col-sm-4"></div>
-                                    <div class="col-sm-4">
-                                        Transaction ID:#<?php echo $transaction_id?>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Product Name</th>
-                                            <th scope="col">Quantity</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Subtotal</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            $sql="select * from `transaction_details` where TRANS_D_ID='$transaction_d_id'";
-                                            $list=mysqli_query($conn,$sql);
-                                            $i=0;
-                                            while($row=mysqli_fetch_assoc($list)){
-                                                $i++;
-                                                echo "
-                                                    <tr>
-                                                        <td>".$i."</td>
-                                                        <td>".$row['PRODUCTS']."</td>
-                                                        <td>".$row['QTY']."</td>
-                                                        <td>".$row['PRICE']."</td>
-                                                        <td>".$row['QTY']*$row['PRICE']."</td>
-                                                    </tr>
-                                                ";
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-7"></div>
-                                    <div class="col-sm-4 py-1">
-                                        payment methods: <br>&emsp;&emsp;&emsp;Payment on delivery
-                                        <hr>
-                                        <table width="100%">
-                                            <tbody><tr>
-                                            <td class="font-weight-bold">Subtotal</td>
-                                            <td class="text-right">$ <?php echo $subtotal?></td>
-                                            </tr>
-                                            
-                                            
-                                            <tr>
-                                            <td class="font-weight-bold">Add VAT</td>
-                                            <td class="text-right">$<?php echo $addVAT ?></td>
-                                            </tr>
-                                            <tr>
-                                            <td class="font-weight-bold">Total</td>
-                                            <td class="font-weight-bold text-right text-primary">$ <?php echo $total?></td>
-                                            </tr>
-                                        </tbody></table>
-                                    </div>
-                                    <div class="col-sm-1"></div>
-                                </div>
-                               
                                 
+
+                                <table class="table table-hover" id="myTable">
+                                    <thead class="text-primary">
+                                        <tr>
+                                            <th scope="col">Username</th>
+                                            <th scope="col">Password</th>
+                                            <th scope="col">Avatar</th>
+                                            <th scope="col">Active</th>
+                                            <th scope="col">Update</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <script src="acc-func.js"></script>
+  
                             </div>
                         </div>
+                        <!--===============================================================================================-->
                     </div>
 
-                    <!---Thay doi-->
                     
                 </div>
 
@@ -219,11 +138,11 @@
     
 
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $(document).ready(function() {
             
             var dataTable=$('#myTable').DataTable({
-                "ajax": "../../fetchdata.php?page=transaction",
+                "ajax": "../../fetchdata.php?page=account",
                 "columns": [{
                     "data": "0"
                 }, {
@@ -232,6 +151,10 @@
                     "data": "2"
                 }, {
                     "data": "3"
+                },  {
+                    "data": "4"
+                },  {
+                    "data": "5"
                 }]
             });
             
@@ -356,7 +279,7 @@
 
                                     $('#id_update').val(userid.ID);
                                     $('#username_update').val(userid.USERNAME);
-                                    $('#password_update').val(userid.PASSWORD);
+                                    //$('#password_update').val(userid.PASSWORD);
                                     $('#img_update').val(userid.IMG);
                                     $('#type_id_update').val(userid.TYPE_ID);
                                     $('#customer_id_update').val(userid.CUSTOMER_ID);
@@ -367,9 +290,6 @@
                                
                                 $('#Edit').modal('show');
                                 //mai code
-                            }
-                            function viewDetail(transaction_id){
-                                
                             }
                             
                             function updateDetails(dataTable){
@@ -584,7 +504,7 @@
                             
                                                         
 
-    </script>
+    </script> -->
    
     
     

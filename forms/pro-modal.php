@@ -19,6 +19,12 @@
                     <label for="name_insert" >Product Name</label>
                     <input type="text"  class="form-control" id="name_insert" name="name_insert" placeholder="Product Name" >
                 </div>
+                <div class="col-auto">
+                        
+                    <img src="" alt="hinh" srcset="" id="avatar_show_i" width='200'>
+                </div>
+                
+
 
                 <div class="col-auto">
                     <label for="img_insert" >Product Img</label>
@@ -108,10 +114,15 @@
                 <label for="name_update" >Product Name</label>
                 <input type="text"  class="form-control" id="name_update" name="name_update" placeholder="Product Name" >
             </div>
+            <div class="col-auto">
+                        
+                <img src="" alt="hinh" srcset="" id="avatar_show_u" width='200'>
+            </div>
 
             <div class="col-auto">
                 <label for="img_update" >Product Img</label>
                 <input type="file"  class="form-control" id="img_update" name="img_update" placeholder="Product Img" >
+                
             </div>
 
             <div class="col-auto">

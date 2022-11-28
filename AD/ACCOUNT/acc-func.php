@@ -56,7 +56,6 @@
                         SET `CUSTOMER_ID` = '$customer_id', `USERNAME` = '$username', `PASSWORD` = '$password',
                         `TYPE_ID` = '$type_id', `STATE` = '$state' WHERE `users`.`ID` = $id";
                     }
-                    
         
                 }else{
                     if($password==NULL){
@@ -68,12 +67,8 @@
                         SET `CUSTOMER_ID` = '$customer_id', `USERNAME` = '$username', `PASSWORD` = '$password',
                          `TYPE_ID` = '$type_id', `IMG` = '$avatar', `STATE` = '$state' WHERE `users`.`ID` = $id";
                     }
-                    
         
                 }
-        
-                
-                
                 $result=mysqli_query($conn,$sql);
                 
             }

@@ -1,3 +1,3 @@
 <?php
-    header('Location:AD/DASHBOARD')
+    header('Location:UserPage')
 ?>

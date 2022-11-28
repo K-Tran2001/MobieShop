@@ -4,7 +4,7 @@
 $server="localhost";
 $user="root";
 $pass="";
-$db="k-shop-dienthoai";
+$db="k-shop-laptop";
 $conn=mysqli_connect($server,$user,$pass,$db);
 if(!$conn){
     die("Loi ".mysqli_connect_error());

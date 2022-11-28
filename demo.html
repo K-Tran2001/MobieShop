@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" onchange="change(event)">
+
+    <img src="img_show" alt="hinh" srcset="" id="img_show">
+    <script>
+        function change(event) {
+
+            //console.log(event);
+            const f = event.target.files[0];
+            const link = URL.createObjectURL(f)
+            console.log(link)
+            document.getElementById('img_show').src = link;
+
+        }
+    </script>
+</body>
+
+</html>

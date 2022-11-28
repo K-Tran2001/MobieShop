@@ -71,6 +71,16 @@ $(document).ready(function () {
 
 
     });
+    $(document).on('change', '#avatar_update', function (e) {
+
+        showImg(e, 'avatar_show_u');
+
+    });
+    $(document).on('change', '#avatar_insert', function (e) {
+
+        showImg(e, 'avatar_show_i');
+
+    });
 
 
 
@@ -135,7 +145,7 @@ function getDetails(id) {
     console.log(id);
     $.post("acc-func.php?action=getdataById", { updateid: id }, function (data, status) {
         var userid = JSON.parse(data);
-        console.log(userid);
+        //console.log(userid);
 
         $('#id_update').val(userid.ID);
         $('#username_update').val(userid.USERNAME);
@@ -144,6 +154,9 @@ function getDetails(id) {
         $('#type_id_update').val(userid.TYPE_ID);
         $('#customer_id_update').val(userid.CUSTOMER_ID);
         $('#state_update').val(userid.STATE);
+
+        document.getElementById('avatar_show_u').src = "../../UserPage/img/" + userid.IMG;
+        console.log(document.getElementById('avatar_show').src)
         //$('#avatar_update').val(userid.avatar);
 
     });
@@ -359,5 +372,16 @@ function adduser(dataTable) {
     } catch {
         alert("Chua chon file")
     }
+
+
+
+}
+function showImg(event, avatar_show) {
+
+    //console.log(event);
+    const f = event.target.files[0];
+    const link = URL.createObjectURL(f)
+    console.log(link)
+    document.getElementById(avatar_show).src = link;
 
 }

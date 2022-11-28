@@ -70,33 +70,34 @@
                 select *
                 from (`transaction` trans inner join `customer` cust on trans.CUST_ID=cust.CUST_ID) 
                 INNER JOIN location lo on lo.LOCATION_ID=cust.LOCATION_ID-->
+                <?php
+                    include '../../config2.php';
+                    $transaction_d_id=$_GET['transaction_d_id'];
+                    $transaction_id=$_GET['transaction_id'];
+                    $sql="select *
+                    from (`transaction` trans inner join `customer` cust on trans.CUST_ID=cust.CUST_ID) 
+                    INNER JOIN location lo on lo.LOCATION_ID=cust.LOCATION_ID where TRANS_ID='$transaction_id'";
+                    $list=mysqli_query($conn,$sql);
+                    $row=mysqli_fetch_assoc($list);
+                    //print_r($row);
+                    $subtotal=$row['GRANDTOTAL'];
+                    $addVAT=$row['GRANDTOTAL']*0.1;
+                    $total=$subtotal+$addVAT;
+                    //echo json_encode($row)
+                ?>
+
 
                 <div class="row ">
                     <div class="col-lg-12 col-md-12">            
                         <div id="msg"></div>
                         <script src="../../js/msg.js"></script>
-                        <!--================================-->
+
                         <div class="card" style="min-height: 485px;">        
                             <div class="card-header card-header-text">
                                 <h4 class="card-title">Transaction Detail</h4>
                                 <p class="category">Duong dan toi / back ve doashboard</p>
                                 
                             </div>
-                            <?php
-                                include '../../config2.php';
-                                $transaction_d_id=$_GET['transaction_d_id'];
-                                $transaction_id=$_GET['transaction_id'];
-                                $sql="select *
-                                from (`transaction` trans inner join `customer` cust on trans.CUST_ID=cust.CUST_ID) 
-                                INNER JOIN location lo on lo.LOCATION_ID=cust.LOCATION_ID where TRANS_ID='$transaction_id'";
-                                $list=mysqli_query($conn,$sql);
-                                $row=mysqli_fetch_assoc($list);
-                                //print_r($row);
-                                $subtotal=$row['GRANDTOTAL'];
-                                $addVAT=+($row['GRANDTOTAL'])*0.1;
-                                $total=$subtotal+$addVAT;
-                                //echo json_encode($row)
-                            ?>
  
                             <div class="card-content table-responsive">
                                 
@@ -106,7 +107,7 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <a href="./" class="btn btn-primary btn-sm mb-2">Back</a>
-                                                <a href="../../PDF/index.php?transaction_d_id=<?php echo $transaction_d_id?>&transaction_id=<?php echo $transaction_id?>" class="btn btn-success btn-sm mb-2">Export Bill</a>
+                                                <a href="./" class="btn btn-success btn-sm mb-2">Export Bill</a>
                                             </div>
                                         </div>
                                         Date:<?php echo $row['DATE']?>

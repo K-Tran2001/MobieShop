@@ -72,6 +72,16 @@ $(document).ready(function () {
 
 
     });
+    $(document).on('change', '#img_update', function (e) {
+        showImg(e, 'avatar_show_u');
+    });
+    $(document).on('change', '#img_insert', function (e) {
+        showImg(e, 'avatar_show_i');
+    });
+    // $(document).on('click', '#img_insert', function (e) {
+    //     showImg(e);
+    // });
+
 
 
 });
@@ -156,6 +166,7 @@ function getDetails(id) {
         $('#supplier_id_update').val(productid.SUPPLIER_ID);
         $('#date_stock_in_update').val(productid.DATE_STOCK_IN);
         $('#state_update').val(productid.STATE);
+        document.getElementById('avatar_show_u').src = "../../UserPage/img/" + productid.IMG;
 
 
         //$('#avatar_update').val(userid.avatar);
@@ -430,5 +441,15 @@ function addproduct(dataTable) {
         console.log('Loi')
 
     }
+
+
+}
+function showImg(event, avatar_show) {
+
+    //console.log(event);
+    const f = event.target.files[0];
+    const link = URL.createObjectURL(f)
+    console.log(link)
+    document.getElementById(avatar_show).src = link;
 
 }

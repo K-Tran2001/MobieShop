@@ -4,7 +4,7 @@ include "../../config2.php";
         if($_GET['action']=='getdataById'){
             if(isset($_POST['updateid']  )){
                 $accountid=$_POST['updateid'];
-                $sql="select * from `product` where `product_id`='$accountid'";
+                $sql="select * from `product` where `PRODUCT_ID`='$accountid'";
                 
                 $ds=mysqli_query($conn,$sql);
                 $response=array();

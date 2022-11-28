@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,9 +12,9 @@
     - favicon
   -->
     <!-- <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon"> -->
-    <link rel="shortcut icon" href="../img/logo-K-5.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/logo-K-5.jpg" type="image/x-icon">
 
-    
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./chat-box.css">
     
  
@@ -22,13 +22,12 @@
     - custom css link
   -->
     <link rel="stylesheet" href="./assets/css/style-prefix.css">
-    <link rel="stylesheet" href="../css/msg-custom.css">
 
     <!--
     - google font link
   -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
+
+  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -39,11 +38,9 @@
     <!--JQuery-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    
 
-    <link rel="stylesheet" href="./style.css">
    
-
+    
     
 </head>
 
@@ -58,7 +55,45 @@
     - MODAL
   -->
 
-    
+    <div class="modal" data-modal>
+
+        <div class="modal-close-overlay" data-modal-overlay></div>
+
+        <div class="modal-content">
+
+            <button class="modal-close-btn" data-modal-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+            <div class="newsletter-img">
+                <img src="./assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+            </div>
+
+            <div class="newsletter">
+
+                <form action="#">
+
+                    <div class="newsletter-header">
+
+                        <h3 class="newsletter-title">Subscribe Newsletter.</h3>
+
+                        <p class="newsletter-desc">
+                            Subscribe the <b>K-shop</b> to get latest products and discount update.
+                        </p>
+
+                    </div>
+
+                    <input type="email" name="email" class="email-field" placeholder="Email Address" required>
+
+                    <button type="submit" class="btn-newsletter">Subscribe</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
 
 
 
@@ -68,11 +103,37 @@
     - NOTIFICATION TOAST
   -->
 
-    
+    <div class="notification-toast" data-toast>
+
+        <button class="toast-close-btn" data-toast-close>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+        <div class="toast-banner">
+            <img src="./assets/images/products/jewellery-1.jpg" alt="Rose Gold Earrings" width="80" height="70">
+        </div>
+
+        <div class="toast-detail">
+
+            <p class="toast-message">
+                Someone in new just bought
+            </p>
+
+            <p class="toast-title">
+                Rose Gold Earrings
+            </p>
+
+            <p class="toast-meta">
+                <time datetime="PT2M">2 Minutes</time> ago
+            </p>
+
+        </div>
+
+    </div>
     <!--  Toast-->
     <style>
-        /* ======= Buttons ======== */
-        /* Block */
+    /* ======= Buttons ======== */
+    /* Block */
     
         .btn {
             display: inline-block;
@@ -227,129 +288,92 @@
             color: rgba(0, 0, 0, 0.3);
             cursor: pointer;
         }
-        .w-450 {
-	width: 450px;
-}
-.vh-100 {
-	min-height: 100vh;
-}
-.w-350 {
-	width: 350px;
-}
     </style>
     <div id="toast"></div>
 
+
+
+
+
+
+
+    <!--
+    - HEADER
+  -->
+
     <?php include './Components/header.php'?>
-    <?php
-        include '../config2.php';
-        $transaction_d_id=$_GET['transaction_d_id'];
-        $transaction_id=$_GET['transaction_id'];
-        $sql="select *
-        from (`transaction` trans inner join `customer` cust on trans.CUST_ID=cust.CUST_ID) 
-        INNER JOIN location lo on lo.LOCATION_ID=cust.LOCATION_ID where TRANS_ID='$transaction_id'";
-        $list=mysqli_query($conn,$sql);
-        $row=mysqli_fetch_assoc($list);
-        //print_r($row);
-        $subtotal=$row['GRANDTOTAL'];
-        $addVAT=$row['GRANDTOTAL']*0.1;
-        $total=$subtotal+$addVAT;
-        //echo json_encode($row)
-    ?>
+    <nav class="desktop-navigation-menu ">
 
-    <main>
-        <div class="container">
-        
-            <h1>Purchase history detail</h1>
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <a href="purchase-history.php" class="btn-buy btn-sm mb-2">Back</a>
-                        </div>
-                        <div class="col-sm-6">
-                            <a href="../PDF/index.php?transaction_d_id=<?php echo $transaction_d_id?>&transaction_id=<?php echo $transaction_id?>" class="btn-back btn-sm mb-2">Export</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6"></div>
-                <div class="col-sm-3">
-                    
-                    Date:<?php echo $row['DATE']?>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-4">
-                    Customer name:<?php echo $row['FIRST_NAME'].' '.$row['LAST_NAME']?>  <br>
-                    Adress:<?php echo $row['PROVINCE'].' '.$row['CITY']?> <br>
-                    Phone:<?php echo $row['PHONE_NUMBER']?>
-                </div>
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    Transaction ID:#<?php echo $transaction_id?>
-                </div>
-            </div>
-            <div class="row">
-                <table class="table">
-                    <thead>
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Subtotal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $sql="select * from `transaction_details` where TRANS_D_ID='$transaction_d_id'";
-                        $list=mysqli_query($conn,$sql);
-                        $i=0;
-                        while($row=mysqli_fetch_assoc($list)){
-                            $i++;
-                            echo "
-                                <tr>
-                                    <td>".$i."</td>
-                                    <td>".$row['PRODUCTS']."</td>
-                                    <td>".$row['QTY']."</td>
-                                    <td>".$row['PRICE']."</td>
-                                    <td>".$row['QTY']*$row['PRICE']."</td>
-                                </tr>
-                            ";
-                        }
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-            <div class="row">
-                <div class="col-sm-7"></div>
-                <div class="col-sm-4 py-1">
-                    Payment methods: <br>&emsp;&emsp;&emsp;<b>COD</b>
-                    <hr>
-                    <table width="100%">
-                        <tbody><tr>
-                        <td class="font-weight-bold">Subtotal</td>
-                        <td class="text-right">$ <?php echo $subtotal?></td>
-                        </tr>
-                        
-                        
-                        <tr>
-                        <td class="font-weight-bold">Add VAT</td>
-                        <td class="text-right">$<?php echo $addVAT ?></td>
-                        </tr>
-                        <tr>
-                        <td class="font-weight-bold">Total</td>
-                        <td class="font-weight-bold text-right text-primary"><b>$ <?php echo $total?></b></td>
-                        </tr>
-                    </tbody></table>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-            
-            
-        
-        </div>
+    <div class="container">
+        <!--1-->
+        <ul class="desktop-menu-category-list">
 
-    </main>
+<li class="menu-category">
+    <a href="#" class="menu-title">Home</a>
+</li>
+<!--Bo cai home ra  dua cac menu-category vo(dropdown)-->
 
-    <?php include 'Components/bot.php'?>
+<?php include_once './Components/menu-category.php'?>
+
+
+
+<li class="menu-category">
+    <a href="#" class="menu-title">SmartPhone</a>
+
+    <ul class="dropdown-list">
+
+        <li class="dropdown-item">
+            <a href="#">Iphone 13 Pro Max</a>
+        </li>
+
+        <li class="dropdown-item">
+            <a href="#">Galaxy S22 Ultra</a>
+        </li>
+
+        <li class="dropdown-item">
+            <a href="#">Galaxy Z Flip</a>
+        </li>
+
+        <li class="dropdown-item">
+            <a href="#">Google Pixel</a>
+        </li>
+
+    </ul>
+</li>
+
+<li class="menu-category">
+    <a href="#" class="menu-title">Phone Accessories</a>
+
+    <ul class="dropdown-list">
+
+        <li class="dropdown-item">
+            <a href="#">Airport</a>
+        </li>
+
+        <li class="dropdown-item">
+            <a href="#">Phone Charger</a>
+        </li>
+
+        <li class="dropdown-item">
+            <a href="#">Headphone</a>
+        </li>
+
+    
+
+    </ul>
+</li>
+
+<li class="menu-category">
+    <a href="#" class="menu-title">Blog</a>
+</li>
+
+<li class="menu-category">
+    <a href="#" class="menu-title">Hot Offers</a>
+</li>
+
+</ul>        
+        <!--1-->
+
+    </div>
+
+</nav>
