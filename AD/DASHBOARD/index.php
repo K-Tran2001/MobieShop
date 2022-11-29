@@ -1,3 +1,10 @@
+<?php session_start();
+if(!isset($_SESSION['user'][0])){
+    header('Location: ../../login.php');
+}
+    $id=$_SESSION['user'][0]['ID'];
+    
+?>
 <!doctype html>
 
 <html lang="en">

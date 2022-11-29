@@ -53,16 +53,17 @@
                             
                         </a>
                         <ul class="dropdown-menu">
+                            
                             <li>
-                                <a href="#">Profile</a>
+                                <a href="../CUSTOMER">Change Info</a>
                             </li>
-                            <li>
-                                <a href="#">Change Setting</a>
+                            <li></li>
+                                <a href="../ACCOUNT">Change Password</a>
                             </li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 
-                                <a href="#">Log Out</a>
+                                <a href="../../logout-excute.php?location=AD">Log Out</a>
                             </li>
                             
 
@@ -74,3 +75,9 @@
         </div>
     </nav>
     </div>
+
+
+
+
+
+

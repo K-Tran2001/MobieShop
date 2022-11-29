@@ -352,10 +352,10 @@
                         success:function(data,status){
                             console.log(data)
                             if(data=='AD'){
-                                window.location.href='index.php';
+                                window.location.href='AD';
                                 showSuccessMsg('Thanh Cong','Dang nhap thanh cong','success')
                             }else if (data=='User'){
-                                window.location.href='./PHP-PROJECT-COMPONENT/index.php';
+                                window.location.href='UserPage';
                                 showSuccessMsg('Thanh Cong','Dang nhap thanh cong','success');
                             }else{
                                 showSuccessMsg('That bai','Dang nhap that bai','error')

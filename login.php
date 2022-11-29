@@ -381,10 +381,10 @@
                         success:function(data,status){
                             console.log(data);
                             if(data==1){
-                                window.location.href='index.php';
+                                window.location.href='./AD';
                                 showSuccessMsg('Thanh Cong','Dang nhap thanh cong','success')
                             }else if(data==2){
-                                window.location.href='./UserPage/index.php';
+                                window.location.href='./UserPage';
                                 showSuccessMsg('Thanh Cong','Dang nhap thanh cong','success');
                             }else{
                                 showSuccessMsg('That bai','Dang nhap khong thanh cong','error');

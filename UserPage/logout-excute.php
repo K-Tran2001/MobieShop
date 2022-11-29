@@ -3,12 +3,13 @@
     
     
     //header('Location:PHP-PROJECT-COMPONENT/index.php');
-    unset($_SESSION['user']);    
-    if($_GET['location']=='header'){
+    unset($_SESSION['user']);  
+    print_r($_GET['location'])  ;
+    if($_GET['location']=='AD'){
 ?>
     <script>
                                             
-        window.location.href='./PHP-PROJECT-COMPONENT/index.php';
+        window.location.href='login.php';
                                                     
     </script>
 

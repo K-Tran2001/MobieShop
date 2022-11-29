@@ -414,7 +414,7 @@ if(!empty($_SESSION['user']))
                 </ul>
             </div>
             <!---Buy btn-->
-            <a href="logout-excute.php"><button type="button" class="btn-buy" >  Logout</button></a>
+            <a href="../logout-excute.php"><button type="button" class="btn-buy" >  Logout</button></a>
             
             <!---cart close-->
             <i class='bx bxs-message-square-x' id="close-cart-user"></i>
