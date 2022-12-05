@@ -9,11 +9,16 @@
                             <!-- Button trigger modal -->
 
                             
-                            
                             <div class="card-content table-responsive">
-                                <button type="button" class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
-                                
-                                
+                                <button type="button" class="btn btn-outline-success btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
+                                <button type="button" class="btn btn-outline-success btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#Import-modal">IMPORT</button>
+                                <a href="export.php" class="btn btn-outline-success btn-sm mb-2">EXPORT</a>
+
+
+                                <form class="" action="import/index.php" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="excel" required value="">
+                                    <button type="submit" name="import">Import</button>
+                                </form>
 
                                 <table class="table table-hover" id="myTable">
                                     <thead class="text-primary">
@@ -37,6 +42,9 @@
                                 
                             </div>
                         </div>        
- <!--=========================================================================================-->                               
+ <!--=========================================================================================-->    
+
+ 
+<!--=========================================================================================-->  
  <script src="index.js"></script>
  <?php include '../../includes/bot.php'?>

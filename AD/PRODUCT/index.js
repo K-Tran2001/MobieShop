@@ -64,6 +64,15 @@ $(document).ready(function () {
 
 
     });
+    $(document).on('click', '#Import', function () {
+
+        //updateDetails(dataTable);
+        //  console.log('import')
+        Import();
+
+
+
+    });
     $(document).on('click', '.delete', function () {
         var user_id = $(this).attr("id");
 
@@ -187,7 +196,6 @@ function getDetails_view(id) {
         $('#produc_id_view').val(productid.PRODUCT_ID);
         $('#product_code_view').val(productid.PRODUCT_CODE);
         $('#name_view').val(productid.NAME);
-        //$('#img_view').val(productid.IMG);
         $('#description_view').val(productid.DESCRIPTION);
         $('#qty_stock_view').val(productid.QTY_STOCK);
         $('#on_hand_view').val(productid.ON_HAND);
@@ -198,6 +206,7 @@ function getDetails_view(id) {
         $('#state_view').val(productid.STATE);
         $('#view_number_view').val(productid.VIEW_NUMBER);
         $('#buy_number_view').val(productid.BUY_NUMBER);
+        document.getElementById('avatar_show_v').src = "../../UserPage/img/" + productid.IMG;
 
 
         //$('#avatar_update').val(userid.avatar);
@@ -452,4 +461,9 @@ function showImg(event, avatar_show) {
     console.log(link)
     document.getElementById(avatar_show).src = link;
 
+}
+function Import() {
+
+
+    console.log('Import data')
 }

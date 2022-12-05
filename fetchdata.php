@@ -25,8 +25,8 @@
 //           else  
 //             $sub_array[] ='<input type="checkbox" class"changestate"   checked="checked" onchange="changeState(`'.$row['username'].'`,0)">';
         
-//           $sub_array[] = '<a onclick="getDetails(`'.$row['username'].'`)" class="btn btn-warning">Sua</a>';
-//           $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['username'].'">Xoa</a>';
+//           $sub_array[] = '<a onclick="getDetails(`'.$row['username'].'`)" class="btn btn-outline-warning">Sua</a>';
+//           $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['username'].'">Xoa</a>';
 
 //           $data[] = $sub_array;
 //         }
@@ -50,9 +50,9 @@
 //           else  
 //             $sub_array[] ='<input type="checkbox" style="color : orange" style="color:#20c997" checked="checked" onchange="changeState(`'.$row['maSP'].'`,0)">';
           
-//           $sub_array[] = '<a onclick="getDetails_view(`'.$row['maSP'].'`)" class="btn btn-info">Xem</a>';
-//           $sub_array[] = '<a onclick="getDetails(`'.$row['maSP'].'`)" class="btn btn-warning">Sua</a>';
-//           $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['maSP'].'">Xoa</a>';
+//           $sub_array[] = '<a onclick="getDetails_view(`'.$row['maSP'].'`)" class="btn btn-outline-info">Xem</a>';
+//           $sub_array[] = '<a onclick="getDetails(`'.$row['maSP'].'`)" class="btn btn-outline-warning">Sua</a>';
+//           $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['maSP'].'">Xoa</a>';
 
 //           $data[] = $sub_array;
 //         }
@@ -73,8 +73,8 @@
 //           $sub_array[] = $row['tinh'];
 //           $sub_array[] = $row['dienThoai'];
           
-//           $sub_array[] = '<a onclick="getDetails(`'.$row['maCty'].'`)" class="btn btn-warning">Sua</a>';
-//           $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['maCty'].'">Xoa</a>';
+//           $sub_array[] = '<a onclick="getDetails(`'.$row['maCty'].'`)" class="btn btn-outline-warning">Sua</a>';
+//           $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['maCty'].'">Xoa</a>';
 
 //           $data[] = $sub_array;
 //         }
@@ -97,8 +97,8 @@
 //           $sub_array[] = $row['dienThoai'];
 //           $sub_array[] = $row['gioiTinh'];
           
-//           $sub_array[] = '<a onclick="getDetails(`'.$row['maKH'].'`)" class="btn btn-warning">Sua</a>';
-//           $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['maKH'].'">Xoa</a>';
+//           $sub_array[] = '<a onclick="getDetails(`'.$row['maKH'].'`)" class="btn btn-outline-warning">Sua</a>';
+//           $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['maKH'].'">Xoa</a>';
 
 //           $data[] = $sub_array;
 //         }
@@ -117,8 +117,8 @@
 //       $sub_array[] = $row['CATEGORY_ID'];
 //       $sub_array[] = $row['CNAME'];
 
-//       $sub_array[] = '<a onclick="getDetails(`'.$row['CATEGORY_ID'].'`)" class="btn btn-warning">Sua</a>';
-//       $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['CATEGORY_ID'].'">Xoa</a>';
+//       $sub_array[] = '<a onclick="getDetails(`'.$row['CATEGORY_ID'].'`)" class="btn btn-outline-warning">Sua</a>';
+//       $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['CATEGORY_ID'].'">Xoa</a>';
 
 //       $data[] = $sub_array;
 //     }
@@ -137,8 +137,8 @@
           
 //           $sub_array[] = $row['CITY'];
           
-//           $sub_array[] = '<a onclick="getDetails(`'.$row['LOCATION_ID'].'`)" class="btn btn-warning">Sua</a>';
-//           $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['LOCATION_ID'].'">Xoa</a>';
+//           $sub_array[] = '<a onclick="getDetails(`'.$row['LOCATION_ID'].'`)" class="btn btn-outline-warning">Sua</a>';
+//           $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['LOCATION_ID'].'">Xoa</a>';
 
 //           $data[] = $sub_array;
 //         }
@@ -156,8 +156,8 @@
 //           $sub_array[] = $row['TYPE'];
           
           
-//           $sub_array[] = '<a onclick="getDetails(`'.$row['TYPE_ID'].'`)" class="btn btn-warning">Sua</a>';
-//           $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['TYPE_ID'].'">Xoa</a>';
+//           $sub_array[] = '<a onclick="getDetails(`'.$row['TYPE_ID'].'`)" class="btn btn-outline-warning">Sua</a>';
+//           $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['TYPE_ID'].'">Xoa</a>';
 
 //           $data[] = $sub_array;
 //         }
@@ -202,8 +202,8 @@ include './config2.php';
           else  
             $sub_array[] ='<input type="checkbox" class"changestate"   checked="checked" onchange="changeState(`'.$row['ID'].'`,0)">';
         
-          $sub_array[] = '<a onclick="getDetails(`'.$row['ID'].'`)" class="btn btn-warning">Update</a>';
-          $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['ID'].'">Delete</a>';
+          $sub_array[] = '<a onclick="getDetails(`'.$row['ID'].'`)" class="btn btn-outline-warning">Update</a>';
+          $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['ID'].'">Delete</a>';
 
           $data[] = $sub_array;
         }
@@ -224,9 +224,9 @@ include './config2.php';
           else  
             $sub_array[] ='<input type="checkbox" class="state" style="color : orange" style="color:#20c997" checked="checked" onchange="changeState(`'.$row['PRODUCT_ID'].'`,0)">';
           
-          $sub_array[] = '<a onclick="getDetails_view(`'.$row['PRODUCT_ID'].'`)" class="btn btn-info">View</a>';
-          $sub_array[] = '<a onclick="getDetails(`'.$row['PRODUCT_ID'].'`)" class="btn btn-warning">Update</a>';
-          $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['PRODUCT_ID'].'">Delete</a>';
+          $sub_array[] = '<a onclick="getDetails_view(`'.$row['PRODUCT_ID'].'`)" class="btn btn-outline-info">View</a>';
+          $sub_array[] = '<a onclick="getDetails(`'.$row['PRODUCT_ID'].'`)" class="btn btn-outline-warning">Update</a>';
+          $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['PRODUCT_ID'].'">Delete</a>';
 
           $data[] = $sub_array;
         }
@@ -248,9 +248,9 @@ include './config2.php';
       else  
         $sub_array[] ='<input type="checkbox" style="color : orange" style="color:#20c997" checked="checked" onchange="changeState(`'.$row['PRODUCT_ID'].'`,0)">';
       
-      $sub_array[] = '<a onclick="getDetails_view(`'.$row['PRODUCT_ID'].'`)" class="btn btn-info">View</a>';
-      $sub_array[] = '<a onclick="getDetails(`'.$row['PRODUCT_ID'].'`)" class="btn btn-warning">Update</a>';
-      $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['PRODUCT_ID'].'">Delete</a>';
+      $sub_array[] = '<a onclick="getDetails_view(`'.$row['PRODUCT_ID'].'`)" class="btn btn-outline-info">View</a>';
+      $sub_array[] = '<a onclick="getDetails(`'.$row['PRODUCT_ID'].'`)" class="btn btn-outline-warning">Update</a>';
+      $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['PRODUCT_ID'].'">Delete</a>';
 
       $data[] = $sub_array;
     }
@@ -271,8 +271,8 @@ include './config2.php';
           $sub_array[] = $row['PHONE_NUMBER'];
           
           
-          $sub_array[] = '<a onclick="getDetails(`'.$row['SUPPLIER_ID'].'`)" class="btn btn-warning">Update</a>';
-          $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['SUPPLIER_ID'].'">Delete</a>';
+          $sub_array[] = '<a onclick="getDetails(`'.$row['SUPPLIER_ID'].'`)" class="btn btn-outline-warning">Update</a>';
+          $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['SUPPLIER_ID'].'">Delete</a>';
 
           $data[] = $sub_array;
         }
@@ -292,8 +292,8 @@ include './config2.php';
           $sub_array[] = $row['PHONE_NUMBER'];
           $sub_array[] = $row['LOCATION_ID'];
 
-          $sub_array[] = '<a onclick="getDetails(`'.$row['CUST_ID'].'`)" class="btn btn-warning">Update</a>';
-          $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['CUST_ID'].'">Delete</a>';
+          $sub_array[] = '<a onclick="getDetails(`'.$row['CUST_ID'].'`)" class="btn btn-outline-warning">Update</a>';
+          $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['CUST_ID'].'">Delete</a>';
 
           $data[] = $sub_array;
         }
@@ -312,8 +312,8 @@ include './config2.php';
       $sub_array[] = $row['CATEGORY_ID'];
       $sub_array[] = $row['CNAME'];
 
-      $sub_array[] = '<a onclick="getDetails(`'.$row['CATEGORY_ID'].'`)" class="btn btn-warning">Update</a>';
-      $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['CATEGORY_ID'].'">Delete</a>';
+      $sub_array[] = '<a onclick="getDetails(`'.$row['CATEGORY_ID'].'`)" class="btn btn-outline-warning">Update</a>';
+      $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['CATEGORY_ID'].'">Delete</a>';
 
       $data[] = $sub_array;
     }
@@ -332,8 +332,8 @@ include './config2.php';
           
           $sub_array[] = $row['CITY'];
           
-          $sub_array[] = '<a onclick="getDetails(`'.$row['LOCATION_ID'].'`)" class="btn btn-warning">Update</a>';
-          $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['LOCATION_ID'].'">Delete</a>';
+          $sub_array[] = '<a onclick="getDetails(`'.$row['LOCATION_ID'].'`)" class="btn btn-outline-warning">Update</a>';
+          $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['LOCATION_ID'].'">Delete</a>';
 
           $data[] = $sub_array;
         }
@@ -351,8 +351,8 @@ include './config2.php';
           $sub_array[] = $row['TYPE'];
           
           
-          $sub_array[] = '<a onclick="getDetails(`'.$row['TYPE_ID'].'`)" class="btn btn-warning">Update</a>';
-          $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['TYPE_ID'].'">Delete</a>';
+          $sub_array[] = '<a onclick="getDetails(`'.$row['TYPE_ID'].'`)" class="btn btn-outline-warning">Update</a>';
+          $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['TYPE_ID'].'">Delete</a>';
 
           $data[] = $sub_array;
         }
@@ -372,7 +372,7 @@ include './config2.php';
           $sub_array[] = $row['NUMOFITEMS'];
           
           
-          $sub_array[] = '<a onclick="viewDetail(`'.$row['TRANS_ID'].'`,`'.$row['TRANS_D_ID'].'`)" class="btn btn-warning">View</a>';
+          $sub_array[] = '<a onclick="viewDetail(`'.$row['TRANS_ID'].'`,`'.$row['TRANS_D_ID'].'`)" class="btn btn-outline-warning">View</a>';
           
 
           $data[] = $sub_array;
@@ -394,8 +394,8 @@ include './config2.php';
           else  
             $sub_array[] ='<input type="checkbox" class"changestate"   checked="checked" onchange="changeState(`'.$row['BANNER_ID'].'`,0)">';
           
-          $sub_array[] = '<a onclick="getDetails(`'.$row['BANNER_ID'].'`)" class="btn btn-warning">Update</a>';
-          $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['BANNER_ID'].'">Delete</a>';
+          $sub_array[] = '<a onclick="getDetails(`'.$row['BANNER_ID'].'`)" class="btn btn-outline-warning">Update</a>';
+          $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['BANNER_ID'].'">Delete</a>';
           
 
           $data[] = $sub_array;
@@ -418,8 +418,8 @@ include './config2.php';
           else  
             $sub_array[] ='<input type="checkbox" class"changestate"   checked="checked" onchange="changeState(`'.$row['BLOG_ID'].'`,0)">';
           
-          $sub_array[] = '<a onclick="getDetails(`'.$row['BLOG_ID'].'`)" class="btn btn-warning">Update</a>';
-          $sub_array[] = '<a  class="btn btn-danger delete" id="'.$row['BLOG_ID'].'">Delete</a>';
+          $sub_array[] = '<a onclick="getDetails(`'.$row['BLOG_ID'].'`)" class="btn btn-outline-warning">Update</a>';
+          $sub_array[] = '<a  class="btn btn-outline-danger delete" id="'.$row['BLOG_ID'].'">Delete</a>';
           
 
           $data[] = $sub_array;

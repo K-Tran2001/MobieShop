@@ -212,10 +212,7 @@
                     <input type="text"  class="form-control" id="name_view" name="name_view" placeholder="Product Name" >
                 </div>
 
-                <div class="col-auto">
-                    <label for="img_view" >Product Img</label>
-                    <input type="file"  class="form-control" id="img_view" name="img_view" placeholder="Product Img" >
-                </div>
+                <img src="" alt="hinh" srcset="" id="avatar_show_v" width='200'>
 
                 <div class="col-auto">
                     <label for="description_view" >Description</label>
@@ -291,3 +288,27 @@
     </div>
 </div>
 </div>
+
+<!--Modal Import-->
+<form action="import" method="post" enctype="multipart/form-data">
+    <div class="modal fade" id="Import-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Import data</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label for="formFile" class="form-label"></label>
+                <input class="form-control" name="excel" type="file" id="formFile">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" >Import</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</form>

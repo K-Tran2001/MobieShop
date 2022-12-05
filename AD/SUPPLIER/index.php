@@ -8,10 +8,12 @@
                             </div>
                             <!-- Button trigger modal -->
 
-                            
+                            <div class="col col-md-6 text-right">
+			<button type="button" id="export_button" class="btn btn-success btn-sm">Export</button>
+		</div>
                             
                             <div class="card-content table-responsive">
-                                <button type="button" class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
+                                <button type="button" class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
                                 
                                 
 

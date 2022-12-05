@@ -11,7 +11,7 @@
                             
                             
                             <div class="card-content table-responsive">
-                                <button type="button" class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
+                                <button type="button" class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
                                 
                                 
 
