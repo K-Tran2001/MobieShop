@@ -30,6 +30,7 @@
 <?php
     include '../config2.php'; 
 if(!empty($_SESSION['user']))
+    
     $acc=$_SESSION['user'][0];
     $cust_id=$acc['CUST_ID'];
     

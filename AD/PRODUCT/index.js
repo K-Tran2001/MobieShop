@@ -87,6 +87,10 @@ $(document).ready(function () {
     $(document).on('change', '#img_insert', function (e) {
         showImg(e, 'avatar_show_i');
     });
+    $('#btn-import').on('click', () => {
+        //document.getElementById("form-import").classList.toggle("visually-hidden");
+        $('#form-import').toggleClass("visually-hidden");
+    })
     // $(document).on('click', '#img_insert', function (e) {
     //     showImg(e);
     // });

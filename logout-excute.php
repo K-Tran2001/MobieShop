@@ -3,9 +3,10 @@
     
     
     //header('Location:PHP-PROJECT-COMPONENT/index.php');
-    unset($_SESSION['user']);  
+    //unset($_SESSION['user']);  
     print_r($_GET['location'])  ;
     if($_GET['location']=='AD'){
+        unset($_SESSION['admin']);  
 ?>
     <script>
                                             
@@ -15,6 +16,7 @@
 
 <?php        
     }  else{
+        unset($_SESSION['user']);  
 ?> 
     <script>
                                             

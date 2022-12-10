@@ -423,6 +423,7 @@
                         <span aria-hidden="true" id="cancelCheckout">×</span>
                         </button>
                     </div>
+                    
                     <div class="modal-body" style="width: 100%;">
                         <div class="form-group row text-left mb-2">
 
@@ -442,19 +443,19 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" >Full Name</span>
                                 </div>
-                                <input type="" class="form-control text-right" id="name" >
+                                <input type="" class="form-control text-right" id="name" value="<?php echo $_SESSION['user'][0]['FIRST_NAME'].' '.$_SESSION['user'][0]['LAST_NAME']?>">
                             </div>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" >Address</span>
                                 </div>
-                                <input type="" class="form-control text-right" id="address">
+                                <input type="" class="form-control text-right" id="address" value="<?php echo $_SESSION['user'][0]['PROVINCE'].' '.$_SESSION['user'][0]['CITY']?>">
                             </div>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" >Phone Number</span>
                                 </div>
-                                <input type="" class="form-control text-right" id="phone">
+                                <input type="" class="form-control text-right" id="phone" value="<?php echo $_SESSION['user'][0]['PHONE_NUMBER']?>">
                             </div>
                             
                                 

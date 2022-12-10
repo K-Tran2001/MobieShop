@@ -736,7 +736,6 @@
     -->
 
         <div class="product-container">
-            <a href="index.php"><button style="padding: 10px 30px; background-color: gray;border-radius: 2px; ">Return</button></a>
 
             <div class="container">
                 <!-- <div class="sidebar  has-scrollbar" data-mobile-menu>
@@ -823,16 +822,7 @@
                                 <span class="color" primary="#444" color="black"></span>
                             </div>
                         </div>
-                        <div class="size-container">
-                            <h3 class="title">size</h3>
-                            <div class="sizes">
-                                <span class="size">7</span>
-                                <span class="size">8</span>
-                                <span class="size active">9</span>
-                                <span class="size">10</span>
-                                <span class="size">11</span>
-                            </div>
-                        </div>
+                        
                         <div class="buy-price">
                             <!-- <a href="#" class="buy"><i class="fas fa-shopping-cart"></i>Add to card</a> -->
                             <!--id, title, price, productImg-->

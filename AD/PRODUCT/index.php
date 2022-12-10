@@ -10,15 +10,29 @@
 
                             
                             <div class="card-content table-responsive">
-                                <button type="button" class="btn btn-outline-success btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
-                                <button type="button" class="btn btn-outline-success btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#Import-modal">IMPORT</button>
-                                <a href="export.php" class="btn btn-outline-success btn-sm mb-2">EXPORT</a>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <button type="button" class="btn btn-outline-success btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
+
+                                    </div>
+                                    
+                                    <div class="col-sm-10">
+                                            
+                                        <button type="button" class="btn btn-outline-success btn-sm mb-2" id="btn-import">IMPORT</button>
+                                        <a href="export.php" class="btn btn-outline-success btn-sm mb-2">EXPORT</a>
+                                        <form class="" action="import/index.php" method="post" enctype="multipart/form-data">
+                                            <!--excel import-->
+                                            <div class="input-group w-50 visually-hidden" id="form-import">
+                                                <input type="file" name="excel" required value="" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                                <button class="btn btn-outline-success" type="submit" name="import" id="inputGroupFileAddon04">Import</button>
+                                            </div>
+                                            
+                                            
+                                        </form>
+                                    </div>
+                                </div>
 
 
-                                <form class="" action="import/index.php" method="post" enctype="multipart/form-data">
-                                    <input type="file" name="excel" required value="">
-                                    <button type="submit" name="import">Import</button>
-                                </form>
 
                                 <table class="table table-hover" id="myTable">
                                     <thead class="text-primary">
