@@ -14,9 +14,9 @@ if(!$conn){
 //////////////OnLile/////////////
 
 // $server="localhost";
-// $user="id19659798_khoatranvan";
-// $pass="Tvk160401*khoakhoa";
-// $db="id19659798_shop";
+// $user="b10_33002547";
+// $pass="tvk160401";
+// $db="b10_33002547_kshop";
 // $conn=mysqli_connect($server,$user,$pass,$db);
 // if(!$conn){
 //     die("Loi ".mysqli_connect_error());

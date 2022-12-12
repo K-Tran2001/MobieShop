@@ -11,7 +11,7 @@
 <body>
     <input type="file" onchange="change(event)">
 
-    <img src="img_show" alt="hinh" srcset="" id="img_show">
+    <img src="img_show" alt="hinh" srcset="" id="img_show" width="500" height="500">
     <script>
         function change(event) {
 
@@ -22,6 +22,10 @@
             document.getElementById('img_show').src = link;
 
         }
+        Promise.all(() => { console.log(1) })
+            .then(() => { console.log(2) })
+            .then(() => { console.log(3) })
+            .catch()
     </script>
 </body>
 

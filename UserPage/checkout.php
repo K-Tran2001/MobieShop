@@ -520,6 +520,9 @@
                             sendMail();//delay....
                             showSuccessMsg('Thanh Cong','Thanh toan thanh cong '+<?php echo $total?>+' VND' ,'success')
                             showSuccessMsg('Thanh Cong','Dat hang thanh cong<br>Thong tin don hang duoc gui toi mail <tvkhoa_20th@student.agu.edu.vn>','info')
+                            
+                            
+                            
                             // $.ajax({
                             //     url:"shopping-cart-func.php?type=cart&action=order",
                             //     type:"POST",

@@ -86,7 +86,7 @@
                 
                 $mail->addAddress($to, $to_name); //mail và tên người nhận  
                 $mail->isHTML(true);  // Set email format to HTML
-                $mail->Subject = 'Gửi thư từ php';      
+                $mail->Subject = 'Chi tiết đơn hàng';      
 
                 $noidungthu = $header.$email_content.$footer;
 

@@ -905,7 +905,7 @@
 
                 window.addEventListener('resize', changeHeight);
                 function addCart(id, title, price) {
-                    ///// Lấy full link img
+                    ///// L?y full link img
                     var productImg = document.getElementsByClassName('product-img-view')[0].src;
                     console.log(productImg);
                     $.ajax({
@@ -1414,5 +1414,3 @@
                            
 
 </body>
-
-</html>
