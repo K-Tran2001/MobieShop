@@ -20,11 +20,18 @@
                                             
                                             <th scope="col">Product Code</th>
                                             <th scope="col">Name</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Date Stock In</th>
+                                            
+                                            <th scope="col">Img</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">qty Stock</th>
+                                            <th scope="col">On Hand</th>
+                                            
+
+
+                                            <th scope="col">Price</th>                               
                                             <th scope="col">Category</th>
                                             <th scope="col">Supplier</th>
-                                            
+                                            <th scope="col">Date Stock In</th>
                                             <th scope="col">Buy Number</th>
                                             <th scope="col">Vew Number</th>
                                             
@@ -41,10 +48,16 @@
                                                 <tr>
                                                     <td><?php echo $row['PRODUCT_CODE']?></td>
                                                     <td><?php echo $row['NAME']?></td>
+                                                    <td><?php echo $row['IMG']?></td>
+                                                    <td><?php echo $row['DESCRIPTION']?></td>
+                                                    <td><?php echo $row['QTY_STOCK']?></td>
+                                                    <td><?php echo $row['ON_HAND']?></td>
+                                                    
                                                     <td><?php echo $row['PRICE']?></td>
-                                                    <td><?php echo $row['DATE_STOCK_IN']?></td>
+                                                    
                                                     <td><?php echo $row['CATEGORY_ID']?></td>
                                                     <td><?php echo $row['SUPPLIER_ID']?></td>
+                                                    <td><?php echo $row['DATE_STOCK_IN']?></td>
                                                     <td><?php echo $row['BUY_NUMBER']?></td>
                                                     <td><?php echo $row['VIEW_NUMBER']?></td>
                                                 </tr>

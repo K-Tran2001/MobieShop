@@ -1,8 +1,8 @@
 <?php session_start();
-if(!isset($_SESSION['user'][0])){
+if(!isset($_SESSION['admin'][0])){
     header('Location: ../../login.php');
 }
-    $id=$_SESSION['user'][0]['ID'];
+    $id=$_SESSION['admin'][0]['ID'];
     
 ?>
 <!doctype html>
@@ -68,7 +68,11 @@ if(!isset($_SESSION['user'][0])){
 
             <div class="main-content">
 
-                <?php include_once '../../includes/quickview.php'?>
+                <?php include_once '../../includes/quickview.php';
+                
+                print_r($_SESSION['user'][0]);
+                print_r($_SESSION['admin'][0]);
+                ?>
 
 
                 <div class="row ">

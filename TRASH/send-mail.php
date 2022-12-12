@@ -87,7 +87,7 @@
     $mail->From = "k-shop.67ag@gmail.com";
     $mail->FromName = "KHOA TRAN";
 
-    $mail->addAddress("k-shop.67ag@gmail.com", "Recepient Name");
+    $mail->addAddress("tvkhoa_20th@student.agu.edu.vn", "Recepient Name");
 
     $mail->isHTML(true);
 

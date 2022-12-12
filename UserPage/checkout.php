@@ -308,7 +308,7 @@
                                 //session_start();
                                     include'../config2.php';
                                     $id=$_SESSION['user'][0]['CUST_ID'];
-                                    //print_r($id);
+                                    print_r($_SESSION['user'][0]);
                                     $sql="select * from `shopping` where cust_id=$id";//session user_id
                                     //echo $sql;//select * from `shopping` where cust_id=20
                                     $list=mysqli_query($conn,$sql);
@@ -423,6 +423,7 @@
                         <span aria-hidden="true" id="cancelCheckout">×</span>
                         </button>
                     </div>
+                    
                     <div class="modal-body" style="width: 100%;">
                         <div class="form-group row text-left mb-2">
 
@@ -442,19 +443,25 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" >Full Name</span>
                                 </div>
-                                <input type="" class="form-control text-right" id="name" >
+                                <input type="" class="form-control text-right" id="name" value="<?php echo $_SESSION['user'][0]['FIRST_NAME'].' '.$_SESSION['user'][0]['LAST_NAME']?>">
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" >Your email</span>
+                                </div>
+                                <input type="email" class="form-control text-right" id="email" value="" required>
                             </div>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" >Address</span>
                                 </div>
-                                <input type="" class="form-control text-right" id="address">
+                                <input type="" class="form-control text-right" id="address" value="<?php echo $_SESSION['user'][0]['PROVINCE'].' '.$_SESSION['user'][0]['CITY']?>">
                             </div>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" >Phone Number</span>
                                 </div>
-                                <input type="" class="form-control text-right" id="phone">
+                                <input type="" class="form-control text-right" id="phone" value="<?php echo $_SESSION['user'][0]['PHONE_NUMBER']?>">
                             </div>
                             
                                 
@@ -510,23 +517,23 @@
                         
                         pay.onclick = ()=>{
                             
-                            //sendMail();//delay....
+                            sendMail();//delay....
                             showSuccessMsg('Thanh Cong','Thanh toan thanh cong '+<?php echo $total?>+' VND' ,'success')
                             showSuccessMsg('Thanh Cong','Dat hang thanh cong<br>Thong tin don hang duoc gui toi mail <tvkhoa_20th@student.agu.edu.vn>','info')
-                            $.ajax({
-                                url:"shopping-cart-func.php?type=cart&action=order",
-                                type:"POST",
-                                data: {
-                                },
-                                success:function(data,status){
-                                    console.log(data);
-                                },
+                            // $.ajax({
+                            //     url:"shopping-cart-func.php?type=cart&action=order",
+                            //     type:"POST",
+                            //     data: {
+                            //     },
+                            //     success:function(data,status){
+                            //         console.log(data);
+                            //     },
 
-                            });
-                            setTimeout(() => {
-                                deleteItemAll(); 
-                            }, 2000);
-                            setTimeout(()=>{window.location.href='purchase-history.php'},3000);
+                            // });
+                            // setTimeout(() => {
+                            //     deleteItemAll(); 
+                            // }, 2000);
+                            // setTimeout(()=>{window.location.href='purchase-history.php'},3000);
                             
                         }
                         // let order=document.querySelector('#Order');
@@ -536,9 +543,10 @@
                             var address = document.querySelector('#address').value;
                             var phone = document.querySelector('#phone').value;
                             var total_price = document.querySelector('#total').value;
+                            var email = document.querySelector('#email').value;
                             console.log(total_price,name);
                             $.ajax({
-                                url:"send-mail.php",
+                                url:"sendmail.php",
                                 type:"POST",
                                 data: {
                                     //maHD 
@@ -546,6 +554,7 @@
                                     address:address,
                                     phone:phone,
                                     total:total_price,
+                                    email:email,
                                 },
                                 success:function(){
                                     
