@@ -308,7 +308,7 @@
                                 //session_start();
                                     include'../config2.php';
                                     $id=$_SESSION['user'][0]['CUST_ID'];
-                                    print_r($_SESSION['user'][0]);
+                                    //print_r($_SESSION['user'][0]);
                                     $sql="select * from `shopping` where cust_id=$id";//session user_id
                                     //echo $sql;//select * from `shopping` where cust_id=20
                                     $list=mysqli_query($conn,$sql);
@@ -523,20 +523,20 @@
                             
                             
                             
-                            // $.ajax({
-                            //     url:"shopping-cart-func.php?type=cart&action=order",
-                            //     type:"POST",
-                            //     data: {
-                            //     },
-                            //     success:function(data,status){
-                            //         console.log(data);
-                            //     },
+                            $.ajax({
+                                url:"shopping-cart-func.php?type=cart&action=order",
+                                type:"POST",
+                                data: {
+                                },
+                                success:function(data,status){
+                                    console.log(data);
+                                },
 
-                            // });
-                            // setTimeout(() => {
-                            //     deleteItemAll(); 
-                            // }, 2000);
-                            // setTimeout(()=>{window.location.href='purchase-history.php'},3000);
+                            });
+                            setTimeout(() => {
+                                deleteItemAll(); 
+                            }, 2000);
+                            setTimeout(()=>{window.location.href='purchase-history.php'},3000);
                             
                         }
                         // let order=document.querySelector('#Order');

@@ -18,5 +18,5 @@ function viewDetail(event) {
 
 
 
-    window.location.href = 'view.php?id=' + id;
+    window.location.href = 'view-detail.php?id=' + id;
 }

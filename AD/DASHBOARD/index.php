@@ -70,8 +70,8 @@ if(!isset($_SESSION['admin'][0])){
 
                 <?php include_once '../../includes/quickview.php';
                 
-                print_r($_SESSION['user'][0]);
-                print_r($_SESSION['admin'][0]);
+                //print_r($_SESSION['user'][0]);
+                //print_r($_SESSION['admin'][0]);
                 ?>
 
 
@@ -79,8 +79,8 @@ if(!isset($_SESSION['admin'][0])){
                     <div class="col-lg-7 col-md-12">
                         <div class="card" style="min-height: 485px">
                             <div class="card-header card-header-text">
-                                <h4 class="card-title">Accounts</h4>
-                                <p class="category">Duong dan toi / back ve doashboard</p>
+                                <h4 class="card-title">Dashboard</h4>
+                                
                                 <div id="piechart_3d" style="width: 500px; height: 500px;"></div>
                                 
                                 <!-- <img src="../../UserPage/img/chart.jpg" alt="hinh.jpg" style="width: 100%;"> -->
@@ -95,7 +95,7 @@ if(!isset($_SESSION['admin'][0])){
                         <div class="card" style="min-height: 485px">
                             <div class="card-header card-header-text">
                                 <h4 class="card-title">Activities</h4>
-                                <span>hoat dong vua moi dien ra</span>
+                                <span>...</span>
                             </div>
                             <div class="card-content">
                                 <div class="streamline">

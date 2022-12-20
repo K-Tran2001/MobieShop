@@ -15,12 +15,7 @@
                     <li>
                         <a href="#">You have 5 new messages</a>
                     </li>
-                    <li>
-                        <a href="#">You're now friend with Mike</a>
-                    </li>
-                    <li>
-                        <a href="#">Wish Mary on her birthday!</a>
-                    </li>
+                  
                     <li>
                         <a href="#">5 warnings in Server Console</a>
                     </li>
@@ -46,11 +41,9 @@
                 <i class="material-icons">smartphone</i><span>Product</span></a>
             <ul class="collapse list-unstyled menu" id="homeSubmenu1">
                 <li>
-                    <a href="../../AD/PRODUCT">Link 1</a>
+                    <a href="../../AD/PRODUCT">Manage</a>
                 </li>
-                <li>
-                    <a href="#">Link 2</a>
-                </li>
+                
                 
             </ul>
         </li>
@@ -63,11 +56,9 @@
                 <i class="material-icons">transcribe</i><span>customer</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu5">
                 <li>
-                    <a href="../../AD/CUSTOMER">Link 1</a>
+                    <a href="../../AD/CUSTOMER">Manage</a>
                 </li>
-                <li>
-                    <a href="#">Link 2</a>
-                </li>
+                
                 
             </ul>
         </li>
@@ -79,11 +70,9 @@
                 <i class="material-icons">screen_rotation_alt</i><span>transaction</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu6">
                 <li>
-                    <a href="../../AD/TRANSACTION">Link 1</a>
+                    <a href="../../AD/TRANSACTION">Manage</a>
                 </li>
-                <li>
-                    <a href="#">Link 2</a>
-                </li>
+                
                 
             </ul>
         </li>
@@ -92,11 +81,9 @@
                 <i class="material-icons">account_circle</i><span>Accounts</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu8">
                 <li>
-                    <a href="../../AD/ACCOUNT">Link 1</a>
+                    <a href="../../AD/ACCOUNT">Manage</a>
                 </li>
-                <li>
-                    <a href="#">Link 2</a>
-                </li>
+                
                 
             </ul>
         </li>
@@ -134,11 +121,9 @@
                 <i class="material-icons">account_circle</i><span>Categorys</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu9">
                 <li>
-                    <a href="category.php">Link 1</a>
+                    <a href="category.php">Manage</a>
                 </li>
-                <li>
-                    <a href="#">Link 2</a>
-                </li>
+                
                 
             </ul>
         </li>
@@ -148,11 +133,9 @@
                 <i class="material-icons">account_circle</i><span>Locations</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu10">
                 <li>
-                    <a href="location.php">Link 1</a>
+                    <a href="location.php">Manage</a>
                 </li>
-                <li>
-                    <a href="#">Link 2</a>
-                </li>
+                
                 
             </ul>
         </li>
@@ -161,11 +144,9 @@
                 <i class="material-icons">account_circle</i><span>Types</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu11">
                 <li>
-                    <a href="type.php">Link 1</a>
+                    <a href="type.php">Manage</a>
                 </li>
-                <li>
-                    <a href="#">Link 2</a>
-                </li>
+                
                 
             </ul>
         </li>
@@ -174,11 +155,9 @@
                 <i class="material-icons">account_circle</i><span>Banner</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu12">
                 <li>
-                    <a href="banner.php">Link 1</a>
+                    <a href="banner.php">Manage</a>
                 </li>
-                <li>
-                    <a href="#">Link 2</a>
-                </li>
+                
                 
             </ul>
         </li>
@@ -187,11 +166,9 @@
                 <i class="material-icons">account_circle</i><span>Blog</span></a>
             <ul class="collapse list-unstyled menu" id="pageSubmenu13">
                 <li>
-                    <a href="blog.php">Link 1</a>
+                    <a href="blog.php">Manage</a>
                 </li>
-                <li>
-                    <a href="#">Link 2</a>
-                </li>
+                
                 
             </ul>
         </li> -->

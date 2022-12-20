@@ -165,7 +165,7 @@
                     <ion-icon name="call-outline"></ion-icon>
                 </div>
 
-                <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+                <a href="tel:+84367855407" class="footer-nav-link">(+84) 367-855-407</a>
             </li>
 
             <li class="footer-nav-item flex">
@@ -173,7 +173,7 @@
                     <ion-icon name="mail-outline"></ion-icon>
                 </div>
 
-                <a href="mailto:example@gmail.com" class="footer-nav-link">example@gmail.com</a>
+                <a href="mailto:ktran2001@gmail.com" class="footer-nav-link">ktran2001@gmail.com</a>
             </li>
 
         </ul>

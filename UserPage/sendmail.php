@@ -50,9 +50,9 @@
             <hr>
             <div class='modal-body'>
             <p style='font-weight:boid'>Tong tien :".$total."</p><br>
-            <p>Voucher: -15000</p><br>
-            <p>Ship: 30000</p><br>
-            <p>Tong cong: ".($total+15000)." </p><br>
+            <p>Voucher: -10$</p><br>
+            <p>Ship: 5$</p><br>
+            <p>Tong cong: ".($total+5)." </p><br>
             <hr>
             <p>Quí khách có hài lòng với dịch vụ của bên SHOP?</p>
 

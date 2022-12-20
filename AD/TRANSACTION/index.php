@@ -3,8 +3,8 @@
 <!--=========================================================================================-->
                         <div class="card" style="min-height: 485px;">        
                             <div class="card-header card-header-text">
-                                <h4 class="card-title">Accounts</h4>
-                                <p class="category">Duong dan toi / back ve doashboard</p>
+                                <h4 class="card-title">Transaction</h4>
+                                <p class="category">ADMIN/Transaction</p>
                             </div>
                             <!-- Button trigger modal -->
 

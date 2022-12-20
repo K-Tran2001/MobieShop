@@ -3,15 +3,15 @@
 <!--=========================================================================================-->
                         <div class="card" style="min-height: 485px;">        
                             <div class="card-header card-header-text">
-                                <h4 class="card-title">Accounts</h4>
-                                <p class="category">Duong dan toi / back ve doashboard</p>
+                                <h4 class="card-title">Account</h4>
+                                <p class="category">ADMIN/Account</p>
                             </div>
                             <!-- Button trigger modal -->
 
                             
                             
                             <div class="card-content table-responsive">
-                                <button type="button" class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
+                                <button type="button" class="btn btn-outline-success btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#New">ADD</button>
                                 
                                 
 

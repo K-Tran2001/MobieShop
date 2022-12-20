@@ -15,7 +15,7 @@
         $res=0;
         $type_id=0;
         while($row=mysqli_fetch_assoc($list)){
-            if($row['USERNAME']==$username&&$row['PASSWORD']==$password){
+            if($row['USERNAME']==$username&&$row['PASSWORD']==$password&&$row['STATE']==1){
                 $type_id=$row['TYPE_ID'];
                 $session_array=array(
                     'ID'=>$row['ID'],

@@ -143,7 +143,7 @@
                         while($r=mysqli_fetch_assoc($data)){
                 ?>
                 <li class="sidebar-submenu-category">
-                    <a href="view.php?id=<?php echo $r['PRODUCT_ID']?>" class="sidebar-submenu-title">
+                    <a href="view-detail.php?id=<?php echo $r['PRODUCT_ID']?>" class="sidebar-submenu-title">
                         <p class="product-name"><?php echo $r['NAME']?></p>
                         <data value="" class="stock" title="Available Stock"><?php echo $r['QTY_STOCK']?></data>
                     </a>
@@ -249,7 +249,7 @@
                         <div class="showcase-wrapper has-scrollbar">
                             <!--5-->
                             <?php
-                                $sql="SELECT * FROM `product` ORDER by BUY_NUMBER DESC LIMIT 3";
+                                $sql="SELECT * FROM `product` ORDER by VIEW_NUMBER DESC LIMIT 3";
                                 $list=mysqli_query($conn,$sql);
                                 while($row=mysqli_fetch_assoc($list)){
                             ?>
@@ -568,16 +568,16 @@
 
                         <div class="testimonial-card">
 
-                            <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+                            <img src="./img/hacker.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
 
-                            <p class="testimonial-name">Alan Doe</p>
+                            <p class="testimonial-name">K Tran</p>
 
                             <p class="testimonial-title">CEO & Founder Invision</p>
 
                             <img src="./assets/images/icons/quotes.svg" alt="quotation" class="quotation-img" width="26">
 
                             <p class="testimonial-desc">
-                                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor sit amet.
+                            We provide the best quality products at the lowest price.
                             </p>
 
                         </div>
@@ -713,110 +713,7 @@
       - BLOG
     -->
 
-        <div class="blog">
-
-            <div class="container">
-                <!--mở copy dòng 660-750-> past vô đây và command -->
-
-
-
-                <!--mở copy-> past vô đây và command -->
-
-                <div class="blog-container has-scrollbar">
-
-                    <div class="blog-card">
-
-                        <a href="#">
-                            <img src="./assets/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300" class="blog-banner">
-                        </a>
-
-                        <div class="blog-content">
-
-                            <a href="#" class="blog-category">Fashion</a>
-
-                            <a href="#">
-                                <h3 class="blog-title">Clothes Retail KPIs 2021 Guide for Clothes Executives.</h3>
-                            </a>
-
-                            <p class="blog-meta">
-                                By <cite>Mr Admin</cite> / <time datetime="2022-04-06">Apr 06, 2022</time>
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="blog-card">
-
-                        <a href="#">
-                            <img src="./assets/images/blog-2.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle." class="blog-banner" width="300">
-                        </a>
-
-                        <div class="blog-content">
-
-                            <a href="#" class="blog-category">Clothes</a>
-
-                            <h3>
-                                <a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
-                            </h3>
-
-                            <p class="blog-meta">
-                                By <cite>Mr Robin</cite> / <time datetime="2022-01-18">Jan 18, 2022</time>
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="blog-card">
-
-                        <a href="#">
-                            <img src="./assets/images/blog-3.jpg" alt="EBT vendors: Claim Your Share of SNAP Online Revenue." class="blog-banner" width="300">
-                        </a>
-
-                        <div class="blog-content">
-
-                            <a href="#" class="blog-category">Shoes</a>
-
-                            <h3>
-                                <a href="#" class="blog-title">EBT vendors: Claim Your Share of SNAP Online Revenue.</a>
-                            </h3>
-
-                            <p class="blog-meta">
-                                By <cite>Mr Selsa</cite> / <time datetime="2022-02-10">Feb 10, 2022</time>
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="blog-card">
-
-                        <a href="#">
-                            <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle." class="blog-banner" width="300">
-                        </a>
-
-                        <div class="blog-content">
-
-                            <a href="#" class="blog-category">Electronics</a>
-
-                            <h3>
-                                <a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
-                            </h3>
-
-                            <p class="blog-meta">
-                                By <cite>Mr Pawar</cite> / <time datetime="2022-03-15">Mar 15, 2022</time>
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
+        
 
     </main>
     <!--Chat box-->
@@ -827,7 +724,7 @@
         <div class="chatbox-message-wrapper">
             <div class="chatbox-message-header">
                 <div class="chatbox-message-profile">
-                    <img src="./img/h5.jpg" alt="" class="chatbox-message-image">
+                    <img src="./img/hacker.jpg" alt="" class="chatbox-message-image">
                     <div>
                         <h4 class="chatbox-message-name">Virtual Assistant</h4>
                         <p class="chatbox-message-status">Online</p>
